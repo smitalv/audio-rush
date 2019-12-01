@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		B28B9EAD2393BBB8006D156E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAB2393BBB8006D156E /* Main.storyboard */; };
 		B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAE2393BBBA006D156E /* Assets.xcassets */; };
 		B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */; };
+		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B28B9EAE2393BBBA006D156E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B28B9EB12393BBBA006D156E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B28B9EB32393BBBA006D156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				B28B9EAE2393BBBA006D156E /* Assets.xcassets */,
 				B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */,
 				B28B9EB32393BBBA006D156E /* Info.plist */,
+				B28B9EB92393BE03006D156E /* GameViewController.swift */,
 			);
 			path = "Avoiding Obstacles";
 			sourceTree = "<group>";
@@ -103,7 +106,7 @@
 				};
 			};
 			buildConfigurationList = B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Avoiding Obstacles" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */,
 				B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */,
 				B28B9EA62393BBB8006D156E /* AppDelegate.swift in Sources */,
 				B28B9EA82393BBB8006D156E /* SceneDelegate.swift in Sources */,
