@@ -18,9 +18,9 @@ class GameViewController: UIViewController {
     var timer: Timer?
     var screenWidth: CGFloat = 0
     var screenHeight: CGFloat = 0
-    var horizontalPosition: CGFloat = 128
+    var horizontalPosition: CGFloat = 0
     var player: AVAudioPlayer?
-    var count = 0
+    var count = 25
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -33,7 +33,8 @@ class GameViewController: UIViewController {
         self.screenWidth = screenSize.width
         self.screenHeight = screenSize.height
         self.playerView.layer.cornerRadius = 24
-        playerViewLeftConstraint.constant = self.screenWidth / 2
+        self.horizontalPosition = self.screenWidth / 2
+        playerViewLeftConstraint.constant = self.horizontalPosition
         self.timer = Timer.scheduledTimer(timeInterval: 0.025, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
     }
     
@@ -44,26 +45,32 @@ class GameViewController: UIViewController {
     @objc func fire()
     {
         self.count += 1
-        if(self.count >= 25) {
-            self.playSound()
+        if(self.count >= 20) {
+            var soundName: String
+            if(self.horizontalPosition < 120) {
+                soundName = "a4"
+                self.playSound(soundName: soundName)
+            } else if(self.horizontalPosition > 136) {
+                soundName = "d4"
+                self.playSound(soundName: soundName)
+            }
+            
             self.count = 0
         }
         
         self.barrierViewTopConstraint.constant += 1
     }
 
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "d4", withExtension: "wav") else { return }
+    func playSound(soundName: String) {
+
+        guard let url = Bundle.main.url(forResource: soundName, withExtension: "wav") else { return }
 
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
             try AVAudioSession.sharedInstance().setActive(true)
 
-            /* The following line is required for the player to work on iOS 11. Change the file type accordingly*/
             player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-
-            /* iOS 10 and earlier require the following line:
-            player = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileTypeMPEGLayer3) */
+            player?.rate = 2
 
             guard let player = player else { return }
 

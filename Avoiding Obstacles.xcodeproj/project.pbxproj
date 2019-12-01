@@ -14,6 +14,7 @@
 		B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAE2393BBBA006D156E /* Assets.xcassets */; };
 		B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */; };
 		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
+		CEE162D50E0B6AFA57EE9404 /* a4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE166708F5E428BF714451E /* a4.wav */; };
 		CEE164D26DFC8AC4E07DDBCB /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16B439CA27DCCBAF25703 /* d4.wav */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		B28B9EB12393BBBA006D156E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B28B9EB32393BBBA006D156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CEE166708F5E428BF714451E /* a4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4.wav; sourceTree = "<group>"; };
 		CEE16B439CA27DCCBAF25703 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +49,7 @@
 				B28B9EA42393BBB8006D156E /* Avoiding Obstacles */,
 				B28B9EA32393BBB8006D156E /* Products */,
 				CEE16B439CA27DCCBAF25703 /* d4.wav */,
+				CEE166708F5E428BF714451E /* a4.wav */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,6 +138,7 @@
 				B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */,
 				B28B9EAD2393BBB8006D156E /* Main.storyboard in Resources */,
 				CEE164D26DFC8AC4E07DDBCB /* d4.wav in Resources */,
+				CEE162D50E0B6AFA57EE9404 /* a4.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
