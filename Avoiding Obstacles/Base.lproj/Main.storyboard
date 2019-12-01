@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="59.5" y="205.5" width="256" height="256"/>
+                                <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
                                 <state key="normal" image="fa-play-circle-o">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -66,18 +66,18 @@
                                 <rect key="frame" x="0.0" y="52" width="375" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljx-6k-YAz">
-                                        <rect key="frame" x="92" y="0.0" width="72" height="32"/>
+                                        <rect key="frame" x="64" y="0.0" width="128" height="32"/>
                                         <color key="backgroundColor" name="GreenColour"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="72" id="Bgp-TN-fa5"/>
+                                            <constraint firstAttribute="width" constant="128" id="Bgp-TN-fa5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="Ljx-6k-YAz" firstAttribute="top" secondItem="Em9-Wz-XpT" secondAttribute="top" id="Mly-Uh-G94"/>
+                                    <constraint firstItem="Ljx-6k-YAz" firstAttribute="centerX" secondItem="Em9-Wz-XpT" secondAttribute="leading" constant="128" id="Tgs-EW-paU"/>
                                     <constraint firstAttribute="bottom" secondItem="Ljx-6k-YAz" secondAttribute="bottom" id="dQm-nL-J7H"/>
-                                    <constraint firstItem="Ljx-6k-YAz" firstAttribute="centerX" secondItem="Em9-Wz-XpT" secondAttribute="leading" constant="128" id="hBE-s0-9Hi"/>
                                     <constraint firstAttribute="height" constant="32" id="y2D-Jk-59d"/>
                                 </constraints>
                             </view>
@@ -100,8 +100,8 @@
                                     <action selector="tappedPause:" destination="Cpu-KF-TeB" eventType="touchUpInside" id="ngA-32-TTb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
-                                <rect key="frame" x="36" y="8" width="35.5" height="38.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
+                                <rect key="frame" x="36" y="8" width="21.5" height="39"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -123,9 +123,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="cvY-H5-WxY"/>
                     <connections>
+                        <outlet property="barrierView" destination="Em9-Wz-XpT" id="4ez-sg-KcJ"/>
                         <outlet property="barrierViewTopConstraint" destination="D7R-Mt-zoo" id="2tB-cf-Tig"/>
+                        <outlet property="holeViewLeftConstraint" destination="Tgs-EW-paU" id="fSa-4c-Mil"/>
                         <outlet property="playerView" destination="ZNO-cy-ywj" id="tzv-xt-lcZ"/>
+                        <outlet property="playerViewBottomConstraint" destination="Pue-1C-PGY" id="ZcY-y4-pxS"/>
                         <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
+                        <outlet property="scoreLabel" destination="B42-Ah-pSO" id="FfD-F3-n1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
