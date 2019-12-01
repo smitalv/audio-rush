@@ -59,5 +59,9 @@ class GameViewController: UIViewController {
             playerViewLeftConstraint.constant = self.horizontalPosition
         }
     }
-
+    
+    @IBAction func tappedPause(_ sender: UIButton) {
+        self.dismiss(animated: false)
+    }
+    
 }
