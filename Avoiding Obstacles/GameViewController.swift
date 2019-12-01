@@ -57,10 +57,14 @@ class GameViewController: UIViewController {
 
     @objc func fire()
     {
-        if(self.steps == 850) {
-            self.playSound(soundName: "correct")
-            self.score += 1
-            self.scoreLabel.text = String(self.score)
+        if(self.playerView.frame.origin.y == self.barrierView.frame.origin.y) {
+            if(self.horizontalPosition - 24 < self.holePosition - 64 || self.horizontalPosition + 24 > self.holePosition + 64) {
+                self.playSound(soundName: "incorrect")
+            } else {
+                self.playSound(soundName: "correct")
+                self.score += 1
+                self.scoreLabel.text = String(self.score)
+            }
         }
 
         self.count += 1

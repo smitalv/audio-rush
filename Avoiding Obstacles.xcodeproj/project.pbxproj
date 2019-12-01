@@ -16,7 +16,8 @@
 		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
 		CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */; };
 		CEE16B05FD5DF4E404571323 /* a4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE161C49321F9993D325179 /* a4.wav */; };
-		CEE16B19FF253DB03F12D23A /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE168466ADA190B86EC45E2 /* correct.wav */; };
+		CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE168CCCA8A6CDB083A0B59 /* correct.wav */; };
+		CEE16F1B944B29B819BA9167 /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE164B402EC6EC33716F168 /* incorrect.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,7 +31,8 @@
 		B28B9EB32393BBBA006D156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CEE161C49321F9993D325179 /* a4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4.wav; sourceTree = "<group>"; };
-		CEE168466ADA190B86EC45E2 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
+		CEE164B402EC6EC33716F168 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
+		CEE168CCCA8A6CDB083A0B59 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,9 +52,10 @@
 			children = (
 				B28B9EA42393BBB8006D156E /* Avoiding Obstacles */,
 				B28B9EA32393BBB8006D156E /* Products */,
-				CEE168466ADA190B86EC45E2 /* correct.wav */,
 				CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */,
 				CEE161C49321F9993D325179 /* a4.wav */,
+				CEE164B402EC6EC33716F168 /* incorrect.wav */,
+				CEE168CCCA8A6CDB083A0B59 /* correct.wav */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,9 +143,10 @@
 				B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */,
 				B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */,
 				B28B9EAD2393BBB8006D156E /* Main.storyboard in Resources */,
-				CEE16B19FF253DB03F12D23A /* correct.wav in Resources */,
 				CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */,
 				CEE16B05FD5DF4E404571323 /* a4.wav in Resources */,
+				CEE16F1B944B29B819BA9167 /* incorrect.wav in Resources */,
+				CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
