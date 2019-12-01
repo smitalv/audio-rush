@@ -3,6 +3,7 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +19,15 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
                                 <rect key="frame" x="144" y="298.5" width="87" height="70"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <segue destination="Cpu-KF-TeB" kind="presentation" modalPresentationStyle="fullScreen" id="wa8-Uq-HlW"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JFT-43-KEr"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t5u-VJ-IcZ"/>
@@ -46,25 +49,57 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Wz-XpT">
                                 <rect key="frame" x="0.0" y="20" width="375" height="32"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljx-6k-YAz">
+                                        <rect key="frame" x="128" y="0.0" width="72" height="32"/>
+                                        <color key="backgroundColor" name="GreenColour"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="72" id="Bgp-TN-fa5"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="Ljx-6k-YAz" firstAttribute="top" secondItem="Em9-Wz-XpT" secondAttribute="top" id="Mly-Uh-G94"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ljx-6k-YAz" secondAttribute="bottom" id="dQm-nL-J7H"/>
+                                    <constraint firstItem="Ljx-6k-YAz" firstAttribute="leading" secondItem="Em9-Wz-XpT" secondAttribute="leading" constant="128" id="hBE-s0-9Hi"/>
                                     <constraint firstAttribute="height" constant="32" id="y2D-Jk-59d"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNO-cy-ywj">
+                                <rect key="frame" x="104" y="547" width="48" height="48"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="HeA-AZ-D9O"/>
+                                    <constraint firstAttribute="width" constant="48" id="JWc-02-Tbz"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="top" secondItem="46H-GS-MEq" secondAttribute="top" constant="20" id="EUc-2c-iKn"/>
+                            <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="ZNO-cy-ywj" secondAttribute="bottom" constant="72" id="Pue-1C-PGY"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="Em9-Wz-XpT" secondAttribute="trailing" id="SPS-hq-h7u"/>
+                            <constraint firstItem="ZNO-cy-ywj" firstAttribute="centerX" secondItem="46H-GS-MEq" secondAttribute="leading" constant="128" id="hXZ-PH-7Nw"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="qyb-MY-mz2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="46H-GS-MEq"/>
                     </view>
                     <navigationItem key="navigationItem" id="cvY-H5-WxY"/>
+                    <connections>
+                        <outlet property="barrierViewTopConstraint" destination="EUc-2c-iKn" id="YnF-6d-bhO"/>
+                        <outlet property="playerView" destination="ZNO-cy-ywj" id="tzv-xt-lcZ"/>
+                        <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="829" y="137"/>
+            <point key="canvasLocation" x="950" y="137"/>
         </scene>
     </scenes>
+    <resources>
+        <namedColor name="GreenColour">
+            <color red="0.098039215686274508" green="0.63529411764705879" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
