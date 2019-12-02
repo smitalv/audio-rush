@@ -126,6 +126,7 @@
                         <outlet property="barrierView" destination="Em9-Wz-XpT" id="4ez-sg-KcJ"/>
                         <outlet property="barrierViewTopConstraint" destination="D7R-Mt-zoo" id="2tB-cf-Tig"/>
                         <outlet property="holeViewLeftConstraint" destination="Tgs-EW-paU" id="fSa-4c-Mil"/>
+                        <outlet property="holeViewWidthConstraint" destination="Bgp-TN-fa5" id="gU8-Nc-0TE"/>
                         <outlet property="playerView" destination="ZNO-cy-ywj" id="tzv-xt-lcZ"/>
                         <outlet property="playerViewBottomConstraint" destination="Pue-1C-PGY" id="ZcY-y4-pxS"/>
                         <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
