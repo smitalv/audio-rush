@@ -89,8 +89,8 @@ class GameViewController: UIViewController {
         self.barrierViewTopConstraint.constant += step
 
         var interval = 0.005 - (Double(self.score) * 0.0001)
-        if(interval < 0.003) {
-            interval = 0.003
+        if(interval < 0.0025) {
+            interval = 0.0025
         }
 
         self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: false)

@@ -17,7 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="59.5" y="205.5" width="256" height="256"/>
+                                <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
+                                <accessibility key="accessibilityConfiguration" label="Play"/>
                                 <state key="normal" image="fa-play-circle-o">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -91,6 +92,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-nv-iH7">
                                 <rect key="frame" x="307" y="8" width="32" height="32"/>
+                                <accessibility key="accessibilityConfiguration" label="Pause"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Wgh-XU-5RH"/>
                                     <constraint firstAttribute="height" constant="32" id="tJR-Ib-DB9"/>
@@ -106,13 +108,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-x4-gyJ">
+                                <rect key="frame" x="0.0" y="411" width="375" height="256"/>
+                                <accessibility key="accessibilityConfiguration" hint="Move left or right" label="Board">
+                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="rU0-sa-rna"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
+                            <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="8bY-x4-gyJ" secondAttribute="trailing" id="9nj-XQ-UFI"/>
+                            <constraint firstItem="8bY-x4-gyJ" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="CCC-bs-qQM"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="top" secondItem="vvb-nv-iH7" secondAttribute="bottom" constant="12" id="D7R-Mt-zoo"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" constant="8" id="MbF-n6-eDI"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="ZNO-cy-ywj" secondAttribute="bottom" constant="72" id="Pue-1C-PGY"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="Em9-Wz-XpT" secondAttribute="trailing" id="SPS-hq-h7u"/>
+                            <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="8bY-x4-gyJ" secondAttribute="bottom" id="egn-J3-g4z"/>
                             <constraint firstItem="ZNO-cy-ywj" firstAttribute="centerX" secondItem="46H-GS-MEq" secondAttribute="leading" constant="128" id="hXZ-PH-7Nw"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="trailing" secondItem="46H-GS-MEq" secondAttribute="trailing" constant="-36" id="pXt-99-5jG"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="qyb-MY-mz2"/>
