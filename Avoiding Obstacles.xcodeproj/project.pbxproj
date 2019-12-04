@@ -14,6 +14,7 @@
 		B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAE2393BBBA006D156E /* Assets.xcassets */; };
 		B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */; };
 		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
+		CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164F1C73227A63E01A747 /* PauseViewController.swift */; };
 		CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */; };
 		CEE16B05FD5DF4E404571323 /* a4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE161C49321F9993D325179 /* a4.wav */; };
 		CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE168CCCA8A6CDB083A0B59 /* correct.wav */; };
@@ -32,6 +33,7 @@
 		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		CEE161C49321F9993D325179 /* a4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4.wav; sourceTree = "<group>"; };
 		CEE164B402EC6EC33716F168 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
+		CEE164F1C73227A63E01A747 /* PauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		CEE168CCCA8A6CDB083A0B59 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,6 +80,7 @@
 				B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */,
 				B28B9EB32393BBBA006D156E /* Info.plist */,
 				B28B9EB92393BE03006D156E /* GameViewController.swift */,
+				CEE164F1C73227A63E01A747 /* PauseViewController.swift */,
 			);
 			path = "Avoiding Obstacles";
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */,
 				B28B9EA62393BBB8006D156E /* AppDelegate.swift in Sources */,
 				B28B9EA82393BBB8006D156E /* SceneDelegate.swift in Sources */,
+				CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

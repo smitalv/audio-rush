@@ -59,6 +59,15 @@ class GameViewController: UIViewController {
         self.beepTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(beep), userInfo: nil, repeats: false)
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+
+        self.timer?.invalidate()
+        self.timer = nil
+        self.beepTimer?.invalidate()
+        self.beepTimer = nil
+    }
+
     @objc func fire()
     {
         if(self.playerView.frame.origin.y == self.barrierView.frame.origin.y) {
@@ -184,11 +193,10 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func tappedPause(_ sender: UIButton) {
-        self.timer?.invalidate()
-        self.timer = nil
-        self.beepTimer?.invalidate()
-        self.beepTimer = nil
-        self.dismiss(animated: false)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "pause") as! PauseViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.score = self.score
+        self.present(vc, animated: false, completion: nil)
     }
     
 }

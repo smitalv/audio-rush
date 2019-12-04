@@ -55,6 +55,69 @@
             </objects>
             <point key="canvasLocation" x="139" y="138"/>
         </scene>
+        <!--Pause View Controller-->
+        <scene sceneID="P9T-qo-5K1">
+            <objects>
+                <viewController storyboardIdentifier="pause" id="RbG-sq-Umy" customClass="PauseViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kic-LE-Mez">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-rf-11Z">
+                                <rect key="frame" x="150" y="295" width="75" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-B4-8QO">
+                                <rect key="frame" x="125" y="404" width="125" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="RESUME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedResumeButton:" destination="RbG-sq-Umy" eventType="touchUpInside" id="dEX-1z-EKN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-Ut-fof">
+                                <rect key="frame" x="142" y="460" width="91" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="MENU">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedMenuButton:" destination="RbG-sq-Umy" eventType="touchUpInside" id="Rz2-e1-pbg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-HM-bjg">
+                                <rect key="frame" x="98" y="205.5" width="179" height="57.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="GreenColour"/>
+                        <constraints>
+                            <constraint firstItem="9UU-rf-11Z" firstAttribute="centerY" secondItem="Kic-LE-Mez" secondAttribute="centerY" id="0fa-8q-ekw"/>
+                            <constraint firstItem="UMx-HM-bjg" firstAttribute="centerX" secondItem="Kic-LE-Mez" secondAttribute="centerX" id="DpG-nJ-ekQ"/>
+                            <constraint firstItem="sjr-B4-8QO" firstAttribute="centerX" secondItem="Kic-LE-Mez" secondAttribute="centerX" id="Lkc-xf-eJX"/>
+                            <constraint firstItem="sjr-B4-8QO" firstAttribute="top" secondItem="9UU-rf-11Z" secondAttribute="bottom" constant="32" id="XcC-ZR-u8I"/>
+                            <constraint firstItem="8Vv-Ut-fof" firstAttribute="top" secondItem="sjr-B4-8QO" secondAttribute="bottom" constant="5" id="h58-yr-KZK"/>
+                            <constraint firstItem="9UU-rf-11Z" firstAttribute="centerX" secondItem="Kic-LE-Mez" secondAttribute="centerX" id="k3g-ox-PFQ"/>
+                            <constraint firstItem="8Vv-Ut-fof" firstAttribute="centerX" secondItem="Kic-LE-Mez" secondAttribute="centerX" id="muZ-mH-iyR"/>
+                            <constraint firstItem="9UU-rf-11Z" firstAttribute="top" secondItem="UMx-HM-bjg" secondAttribute="bottom" constant="32" id="s1I-Vz-6hk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="G1Y-Sh-isM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XI3-Rf-Sw3"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="9UU-rf-11Z" id="qFa-oI-Z6x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFq-WX-baz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="871"/>
+        </scene>
         <!--Game View Controller-->
         <scene sceneID="7Gb-U8-nwX">
             <objects>
