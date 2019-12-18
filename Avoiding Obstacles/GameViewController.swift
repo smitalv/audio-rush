@@ -73,6 +73,10 @@ class GameViewController: UIViewController {
         if(self.playerView.frame.origin.y == self.barrierView.frame.origin.y) {
             if(self.horizontalPosition - 24 < self.holePosition - (self.holeWidth / 2) || self.horizontalPosition + 24 > self.holePosition + (self.holeWidth / 2)) {
                 self.playSound(soundName: "incorrect")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "gameOver") as! GameOverViewController
+                vc.modalPresentationStyle = .fullScreen
+                vc.score = self.score
+                self.present(vc, animated: false, completion: nil)
             } else {
                 self.playSound(soundName: "correct")
                 self.score += 1

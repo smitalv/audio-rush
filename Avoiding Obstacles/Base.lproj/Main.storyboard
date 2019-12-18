@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFq-WX-baz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="125" y="871"/>
+            <point key="canvasLocation" x="122" y="892"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="7Gb-U8-nwX">
@@ -214,6 +214,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="949.27536231884062" y="135.9375"/>
+        </scene>
+        <!--Game Over View Controller-->
+        <scene sceneID="INV-qM-TEN">
+            <objects>
+                <viewController storyboardIdentifier="gameOver" id="2h8-Xf-LVD" customClass="GameOverViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kJM-3t-4PW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXB-BW-pnu">
+                                <rect key="frame" x="150" y="295" width="75" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-Qt-1Ne">
+                                <rect key="frame" x="142" y="404" width="91" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="MENU">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedMenuButton:" destination="2h8-Xf-LVD" eventType="touchUpInside" id="twH-mW-O47"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loc-S6-jDj">
+                                <rect key="frame" x="55.5" y="205" width="264" height="58"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="GreenColour"/>
+                        <constraints>
+                            <constraint firstItem="1L4-Qt-1Ne" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="EvQ-bK-jhZ"/>
+                            <constraint firstItem="loc-S6-jDj" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="Ozh-IR-mhU"/>
+                            <constraint firstItem="1L4-Qt-1Ne" firstAttribute="top" secondItem="LXB-BW-pnu" secondAttribute="bottom" constant="32" id="eLW-5C-tAg"/>
+                            <constraint firstItem="LXB-BW-pnu" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="iij-Zc-1Nf"/>
+                            <constraint firstItem="LXB-BW-pnu" firstAttribute="centerY" secondItem="kJM-3t-4PW" secondAttribute="centerY" id="vsh-Np-Q8K"/>
+                            <constraint firstItem="LXB-BW-pnu" firstAttribute="top" secondItem="loc-S6-jDj" secondAttribute="bottom" constant="32" id="w5E-aA-gV9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="81U-4H-hF3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BfZ-X6-TEb"/>
+                    <connections>
+                        <outlet property="scoreLabel" destination="LXB-BW-pnu" id="0cU-Wm-9t3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNd-Nz-1Vq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="902"/>
         </scene>
     </scenes>
     <resources>
