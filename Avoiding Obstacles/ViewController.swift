@@ -12,12 +12,14 @@ import GameKit
 class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
     @IBOutlet weak var visibilityButton: UIButton!
+    @IBOutlet weak var difficultyButton: UIButton!
     
     var gcEnabled = Bool()
     var gcDefaultLeaderBoard = String()
-    var visibility = false
 
-    let LEADERBOARD_ID = "score_leaderboard"
+    var visibility = false
+    var difficulty = "normal"
+    var leaderboard_id = "not_visible_normal"
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -33,7 +35,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
         gcVC.viewState = .leaderboards
-        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+        gcVC.leaderboardIdentifier = leaderboard_id
         present(gcVC, animated: false, completion: nil)
     }
     
@@ -46,6 +48,33 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             self.visibilityButton.setImage(UIImage(named: "ion-eye"), for: .normal)
         }
 
+        self.updateLeaderboardId()
+    }
+    
+    @IBAction func tappedDifficultyButton(_ sender: UIButton) {
+        if(self.difficulty == "normal") {
+            self.difficulty = "hard"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-fast"), for: .normal)
+        } else if(self.difficulty == "hard") {
+            self.difficulty = "easy"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-slow"), for: .normal)
+        } else {
+            self.difficulty = "normal"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-normal"), for: .normal)
+        }
+
+        self.updateLeaderboardId()
+    }
+
+    func updateLeaderboardId() {
+        var visibilityPart: String
+        if(self.visibility) {
+            visibilityPart = "visible"
+        } else {
+            visibilityPart = "not_visible"
+        }
+
+        self.leaderboard_id = visibilityPart + "_" + self.difficulty
     }
     
     func authenticateLocalPlayer() {

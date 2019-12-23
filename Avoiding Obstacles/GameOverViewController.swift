@@ -12,7 +12,7 @@ import GameKit
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
 
-    let LEADERBOARD_ID = "score_leaderboard"
+    let LEADERBOARD_ID = "not_visible_normal"
 
     public var score: Int = 0
 
