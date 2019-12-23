@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2345EAD23B010880087041C /* loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2345EAC23B00EA30087041C /* loop.wav */; };
+		B2345EB123B01B690087041C /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2345EB023B01B690087041C /* GameKit.framework */; };
 		B28B9EA62393BBB8006D156E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA52393BBB8006D156E /* AppDelegate.swift */; };
 		B28B9EA82393BBB8006D156E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA72393BBB8006D156E /* SceneDelegate.swift */; };
 		B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA92393BBB8006D156E /* ViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2345EAC23B00EA30087041C /* loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop.wav; path = "/Volumes/Václav - SSD/Projects/Avoiding Obstacles/loop.wav"; sourceTree = "<absolute>"; };
+		B2345EB023B01B690087041C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B28B9EA22393BBB8006D156E /* Avoiding Obstacles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Avoiding Obstacles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28B9EA52393BBB8006D156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28B9EA72393BBB8006D156E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,21 +49,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2345EB123B01B690087041C /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2345EAF23B01B690087041C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B2345EB023B01B690087041C /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B28B9E992393BBB8006D156E = {
 			isa = PBXGroup;
 			children = (
 				B28B9EA42393BBB8006D156E /* Avoiding Obstacles */,
 				B28B9EA32393BBB8006D156E /* Products */,
+				B2345EAC23B00EA30087041C /* loop.wav */,
 				CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */,
 				CEE161C49321F9993D325179 /* a4.wav */,
 				CEE164B402EC6EC33716F168 /* incorrect.wav */,
 				CEE168CCCA8A6CDB083A0B59 /* correct.wav */,
+				B2345EAF23B01B690087041C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +167,7 @@
 				CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */,
 				CEE16B05FD5DF4E404571323 /* a4.wav in Resources */,
 				CEE16F1B944B29B819BA9167 /* incorrect.wav in Resources */,
+				B2345EAD23B010880087041C /* loop.wav in Resources */,
 				CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "smit.al.Avoiding-Obstacles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -337,6 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "smit.al.Avoiding-Obstacles";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var barrierView: UIView!
     @IBOutlet weak var barrierViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewLeftConstraint: NSLayoutConstraint!
+    @IBOutlet weak var holeOverlayView: UIView!
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var playerViewLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var playerViewBottomConstraint: NSLayoutConstraint!
@@ -21,12 +22,11 @@ class GameViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     var timer: Timer?
-    var beepTimer: Timer?
     var screenWidth: CGFloat = 0
     var screenHeight: CGFloat = 0
     var horizontalPosition: CGFloat = 0
-    var beepPlayer: AVAudioPlayer?
     var player: AVAudioPlayer?
+    var beepPlayer: AVAudioPlayer?
     var holePosition: CGFloat = 128
     var step: CGFloat = 1
     var steps = 0
@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         self.timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(fire), userInfo: nil, repeats: false)
-        self.beepTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(beep), userInfo: nil, repeats: false)
+        self.playBeep(soundName: "loop")
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -64,8 +64,6 @@ class GameViewController: UIViewController {
 
         self.timer?.invalidate()
         self.timer = nil
-        self.beepTimer?.invalidate()
-        self.beepTimer = nil
     }
 
     @objc func fire()
@@ -83,6 +81,9 @@ class GameViewController: UIViewController {
                 self.scoreLabel.text = String(self.score)
             }
         }
+
+        self.view.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
+        self.holeOverlayView.backgroundColor = self.view.backgroundColor
         
         self.steps += 1
         if(self.steps >= 1000) {
@@ -106,6 +107,20 @@ class GameViewController: UIViewController {
             interval = 0.0025
         }
 
+        if(self.playerView.frame.origin.y + 24 >= self.barrierView.frame.origin.y - 16) {
+            if(self.horizontalPosition - 24 < self.holePosition - (self.holeWidth / 2)) {
+                self.beepPlayer?.volume = Float(0.5 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - 24) * 0.01)
+                self.beepPlayer?.pan = 1
+            } else if(self.horizontalPosition + 24 > self.holePosition + (self.holeWidth / 2)) {
+                self.beepPlayer?.volume = Float(0.5 + (self.horizontalPosition + 24 - self.holePosition + (self.holeWidth / 2)) * 0.01)
+                self.beepPlayer?.pan = -1
+            } else {
+                self.beepPlayer?.volume = 0
+            }
+        } else {
+            self.beepPlayer?.volume = 0
+        }
+
         self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: false)
     }
     
@@ -118,7 +133,7 @@ class GameViewController: UIViewController {
             try AVAudioSession.sharedInstance().setActive(true)
 
             beepPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.wav.rawValue)
-            beepPlayer?.rate = 2
+            beepPlayer?.numberOfLoops = -1
 
             guard let beepPlayer = beepPlayer else { return }
 
@@ -146,34 +161,6 @@ class GameViewController: UIViewController {
 
         } catch let error {
             print(error.localizedDescription)
-        }
-    }
-
-    @objc func beep()
-    {
-        if(self.playerView.frame.origin.y + 24 >= self.barrierView.frame.origin.y - 16) {
-            if(self.horizontalPosition - 24 < self.holePosition - (self.holeWidth / 2)) {
-                self.status = "left"
-            } else if(self.horizontalPosition + 24 > self.holePosition + (self.holeWidth / 2)) {
-                self.status = "right"
-            } else {
-                self.status = "ok"
-            }
-        } else {
-            self.status = "ok"
-        }
-
-        var soundName: String
-        if(self.status == "left") {
-            soundName = "a4"
-            self.playBeep(soundName: soundName)
-            self.beepTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.25 - (self.horizontalPosition - self.holePosition) * 0.001), target: self, selector: #selector(beep), userInfo: nil, repeats: false)
-        } else if(self.status == "right") {
-            soundName = "d4"
-            self.playBeep(soundName: soundName)
-            self.beepTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.25 - (self.holePosition - self.horizontalPosition) * 0.001), target: self, selector: #selector(beep), userInfo: nil, repeats: false)
-        } else {
-            self.beepTimer = Timer.scheduledTimer(timeInterval: 0.25, target: self, selector: #selector(beep), userInfo: nil, repeats: false)
         }
     }
 

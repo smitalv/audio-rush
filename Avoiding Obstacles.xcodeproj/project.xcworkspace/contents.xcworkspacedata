@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Avoiding Obstacles.xcodeproj">
+      location = "group:/Volumes/Va&#x301;clav - SSD/Projects/Avoiding Obstacles/loop.wav">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
