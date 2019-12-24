@@ -12,7 +12,7 @@ import GameKit
 class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
     @IBOutlet weak var scoreLabel: UILabel!
 
-    let LEADERBOARD_ID = "not_visible_normal"
+    var leaderboard_id = "not_visible_normal"
 
     public var score: Int = 0
 
@@ -26,7 +26,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
 
         scoreLabel.text = String(self.score)
 
-        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+        let bestScoreInt = GKScore(leaderboardIdentifier: self.leaderboard_id)
         bestScoreInt.value = Int64(self.score)
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {

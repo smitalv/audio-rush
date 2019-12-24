@@ -16,16 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
-                                <accessibility key="accessibilityConfiguration" label="Play"/>
-                                <state key="normal" image="fa-play-circle-o">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Cpu-KF-TeB" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="wa8-Uq-HlW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVOIDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gie-qh-yc1">
                                 <rect key="frame" x="32" y="72" width="201" height="50.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
@@ -86,6 +76,16 @@
                                 <state key="normal" image="fa-info">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
+                                <rect key="frame" x="123.5" y="269.5" width="128" height="128"/>
+                                <accessibility key="accessibilityConfiguration" label="Play"/>
+                                <state key="normal" image="fa-play-circle-o">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dEQ-AJ-7FS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="GreenColour"/>
@@ -182,7 +182,7 @@
         <!--Game View Controller-->
         <scene sceneID="7Gb-U8-nwX">
             <objects>
-                <viewController id="Cpu-KF-TeB" customClass="GameViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="game" id="Cpu-KF-TeB" customClass="GameViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hT2-S4-NqL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

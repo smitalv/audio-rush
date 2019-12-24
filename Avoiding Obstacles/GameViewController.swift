@@ -20,6 +20,10 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var scoreLabel: UILabel!
+
+    var visibility = false
+    var difficulty = "normal"
+    var leaderboard_id = "not_visible_normal"
     
     var timer: Timer?
     var screenWidth: CGFloat = 0
@@ -33,6 +37,7 @@ class GameViewController: UIViewController {
     var score = 0
     var holeWidth: CGFloat = 128
     var status = "ok"
+    var originalDelay = 0.004
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -40,6 +45,18 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if !self.visibility {
+            self.barrierView.alpha = 0
+        }
+
+        if self.difficulty == "easy" {
+            self.originalDelay = 0.005
+        } else if self.difficulty == "hard" {
+            self.originalDelay = 0.0015
+        } else {
+            self.originalDelay = 0.003
+        }
 
         let screenSize = UIScreen.main.bounds
         self.screenWidth = screenSize.width
@@ -74,6 +91,7 @@ class GameViewController: UIViewController {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "gameOver") as! GameOverViewController
                 vc.modalPresentationStyle = .fullScreen
                 vc.score = self.score
+                vc.leaderboard_id = self.leaderboard_id
                 self.present(vc, animated: false, completion: nil)
             } else {
                 self.playSound(soundName: "correct")
@@ -88,7 +106,6 @@ class GameViewController: UIViewController {
         self.steps += 1
         if(self.steps >= 1000) {
             self.barrierViewTopConstraint.constant = 12
-            self.barrierView.alpha -= 1/3
             self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
             self.holeViewLeftConstraint.constant = self.holePosition;
 
@@ -96,15 +113,14 @@ class GameViewController: UIViewController {
                 self.holeWidth = CGFloat(128 - 0.5 * Double(self.score - 20))
                 self.holeViewWidthConstraint.constant = self.holeWidth
             }
-
             self.steps = 0
         }
         
         self.barrierViewTopConstraint.constant += step
 
-        var interval = 0.005 - (Double(self.score) * 0.0001)
-        if(interval < 0.0025) {
-            interval = 0.0025
+        var interval = self.originalDelay - (Double(self.score) * 0.0001)
+        if(interval < 0.0005) {
+            interval = 0.0005
         }
 
         if(self.playerView.frame.origin.y + 24 >= self.barrierView.frame.origin.y - 16) {
