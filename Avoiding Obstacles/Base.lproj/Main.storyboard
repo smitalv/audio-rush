@@ -187,6 +187,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-dU-PfM">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" name="GreenColour"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Wz-XpT">
                                 <rect key="frame" x="0.0" y="52" width="375" height="32"/>
                                 <subviews>
@@ -198,7 +202,7 @@
                                                 <color key="backgroundColor" name="GreenColour"/>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" red="0.098039215686274508" green="0.63529411764705879" blue="0.43185214796535043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="Bgp-TN-fa5"/>
                                             <constraint firstAttribute="bottom" secondItem="MC0-oR-pNd" secondAttribute="bottom" id="EZz-1l-BMn"/>
@@ -220,7 +224,7 @@
                                 <rect key="frame" x="104" y="547" width="48" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="HeA-AZ-D9O"/>
+                                    <constraint firstAttribute="width" secondItem="ZNO-cy-ywj" secondAttribute="height" multiplier="1:1" id="1N4-4R-sDV"/>
                                     <constraint firstAttribute="width" constant="48" id="JWc-02-Tbz"/>
                                 </constraints>
                             </view>
@@ -253,14 +257,18 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" name="GreenColour"/>
+                        <color key="backgroundColor" red="0.098039215686274508" green="0.63529411764705879" blue="0.43292235344480251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="8bY-x4-gyJ" secondAttribute="trailing" id="9nj-XQ-UFI"/>
+                            <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="hfL-dU-PfM" secondAttribute="bottom" id="BJI-b2-vMK"/>
                             <constraint firstItem="8bY-x4-gyJ" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="CCC-bs-qQM"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="top" secondItem="vvb-nv-iH7" secondAttribute="bottom" constant="12" id="D7R-Mt-zoo"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" constant="8" id="MbF-n6-eDI"/>
+                            <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="hfL-dU-PfM" secondAttribute="trailing" id="NKO-rd-Lpz"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="ZNO-cy-ywj" secondAttribute="bottom" constant="72" id="Pue-1C-PGY"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="Em9-Wz-XpT" secondAttribute="trailing" id="SPS-hq-h7u"/>
+                            <constraint firstItem="hfL-dU-PfM" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="T0C-AQ-btD"/>
+                            <constraint firstItem="hfL-dU-PfM" firstAttribute="top" secondItem="46H-GS-MEq" secondAttribute="top" id="dpI-LK-iPF"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="8bY-x4-gyJ" secondAttribute="bottom" id="egn-J3-g4z"/>
                             <constraint firstItem="ZNO-cy-ywj" firstAttribute="centerX" secondItem="46H-GS-MEq" secondAttribute="leading" constant="128" id="hXZ-PH-7Nw"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="trailing" secondItem="46H-GS-MEq" secondAttribute="trailing" constant="-36" id="pXt-99-5jG"/>
@@ -274,18 +282,20 @@
                     <connections>
                         <outlet property="barrierView" destination="Em9-Wz-XpT" id="4ez-sg-KcJ"/>
                         <outlet property="barrierViewTopConstraint" destination="D7R-Mt-zoo" id="2tB-cf-Tig"/>
+                        <outlet property="boardView" destination="hfL-dU-PfM" id="3Fa-0i-95Y"/>
                         <outlet property="holeOverlayView" destination="MC0-oR-pNd" id="1Vi-2O-EaS"/>
                         <outlet property="holeViewLeftConstraint" destination="Tgs-EW-paU" id="fSa-4c-Mil"/>
-                        <outlet property="holeViewWidthConstraint" destination="Bgp-TN-fa5" id="gU8-Nc-0TE"/>
+                        <outlet property="holeViewWidthConstraint" destination="JWc-02-Tbz" id="9R2-Si-EGY"/>
                         <outlet property="playerView" destination="ZNO-cy-ywj" id="tzv-xt-lcZ"/>
-                        <outlet property="playerViewBottomConstraint" destination="Pue-1C-PGY" id="ZcY-y4-pxS"/>
+                        <outlet property="playerViewBottomConstraint" destination="JWc-02-Tbz" id="J3k-k5-udV"/>
                         <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
+                        <outlet property="playerViewWidthContraint" destination="JWc-02-Tbz" id="y3f-OM-2Ws"/>
                         <outlet property="scoreLabel" destination="B42-Ah-pSO" id="FfD-F3-n1p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="948.75" y="135"/>
+            <point key="canvasLocation" x="948" y="134.48275862068968"/>
         </scene>
         <!--Game Over View Controller-->
         <scene sceneID="INV-qM-TEN">

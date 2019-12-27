@@ -11,6 +11,7 @@ import AVFoundation
 
 class GameViewController: UIViewController {
 
+    @IBOutlet weak var boardView: UIView!
     @IBOutlet weak var barrierView: UIView!
     @IBOutlet weak var barrierViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewLeftConstraint: NSLayoutConstraint!
@@ -18,6 +19,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var playerViewLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var playerViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playerViewWidthContraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var scoreLabel: UILabel!
 
@@ -38,6 +40,7 @@ class GameViewController: UIViewController {
     var holeWidth: CGFloat = 128
     var status = "ok"
     var originalDelay = 0.004
+    var playerSize: CGFloat = 0
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -61,7 +64,6 @@ class GameViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         self.screenWidth = screenSize.width
         self.screenHeight = screenSize.height
-        self.playerView.layer.cornerRadius = 24
         self.horizontalPosition = self.screenWidth / 2
         self.playerViewLeftConstraint.constant = self.horizontalPosition
         self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
@@ -69,6 +71,11 @@ class GameViewController: UIViewController {
         self.holeViewLeftConstraint.constant = self.holePosition;
         self.step = (self.screenHeight - barrierView.frame.origin.y) / 1000
         self.playerViewBottomConstraint.constant = CGFloat(self.step * 150)
+        self.holeWidth = 0.35 * self.screenWidth
+        self.holeViewWidthConstraint.constant = self.holeWidth
+        self.playerSize = 0.10 * self.screenWidth
+        self.playerViewWidthContraint.constant = self.playerSize
+        self.playerView.layer.cornerRadius = self.playerSize / 2
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -100,8 +107,8 @@ class GameViewController: UIViewController {
             }
         }
 
-        self.view.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
-        self.holeOverlayView.backgroundColor = self.view.backgroundColor
+        self.boardView.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
+        self.holeOverlayView.backgroundColor = self.boardView.backgroundColor
         
         self.steps += 1
         if(self.steps >= 1000) {
@@ -109,8 +116,8 @@ class GameViewController: UIViewController {
             self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
             self.holeViewLeftConstraint.constant = self.holePosition;
 
-            if(self.score > 20 && self.holeWidth > 64) {
-                self.holeWidth = CGFloat(128 - 0.5 * Double(self.score - 20))
+            if(self.score > 20) {
+                self.holeWidth = (0.35 - 0.002 * CGFloat(self.score - 20)) * self.screenWidth
                 self.holeViewWidthConstraint.constant = self.holeWidth
             }
             self.steps = 0
