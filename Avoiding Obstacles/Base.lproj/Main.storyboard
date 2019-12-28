@@ -30,6 +30,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-EH-NrE">
                                 <rect key="frame" x="16" y="20" width="48" height="48"/>
+                                <accessibility key="accessibilityConfiguration" label="Leaderboards"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="25H-XI-gVY"/>
                                     <constraint firstAttribute="height" constant="48" id="5i2-gR-q1z"/>
@@ -43,6 +44,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-Z6-uVP">
                                 <rect key="frame" x="247" y="20" width="48" height="48"/>
+                                <accessibility key="accessibilityConfiguration" label="Visibility disabled. Tap to enable."/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Vp5-rz-UKr"/>
                                     <constraint firstAttribute="height" constant="48" id="hP3-AQ-CWm"/>
@@ -56,6 +58,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-3I-8av">
                                 <rect key="frame" x="311" y="20" width="48" height="48"/>
+                                <accessibility key="accessibilityConfiguration" label="Normal difficulty. Tap to change."/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MCG-bV-x67"/>
                                     <constraint firstAttribute="width" constant="48" id="j7n-jK-TFP"/>
@@ -69,6 +72,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgk-hv-q2m">
                                 <rect key="frame" x="80" y="20" width="48" height="48"/>
+                                <accessibility key="accessibilityConfiguration" label="Get started"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="0wf-1n-cLD"/>
                                     <constraint firstAttribute="height" constant="48" id="PCb-Xt-bEe"/>
@@ -285,12 +289,13 @@
                         <outlet property="boardView" destination="hfL-dU-PfM" id="3Fa-0i-95Y"/>
                         <outlet property="holeOverlayView" destination="MC0-oR-pNd" id="1Vi-2O-EaS"/>
                         <outlet property="holeViewLeftConstraint" destination="Tgs-EW-paU" id="fSa-4c-Mil"/>
-                        <outlet property="holeViewWidthConstraint" destination="JWc-02-Tbz" id="9R2-Si-EGY"/>
+                        <outlet property="holeViewWidthConstraint" destination="Bgp-TN-fa5" id="QxL-Ut-srC"/>
                         <outlet property="playerView" destination="ZNO-cy-ywj" id="tzv-xt-lcZ"/>
                         <outlet property="playerViewBottomConstraint" destination="JWc-02-Tbz" id="J3k-k5-udV"/>
                         <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
                         <outlet property="playerViewWidthContraint" destination="JWc-02-Tbz" id="y3f-OM-2Ws"/>
                         <outlet property="scoreLabel" destination="B42-Ah-pSO" id="FfD-F3-n1p"/>
+                        <outlet property="voiceOverBoardViewHeightConstraint" destination="rU0-sa-rna" id="biM-cB-r9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,13 +317,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-Qt-1Ne">
-                                <rect key="frame" x="142" y="404" width="91" height="51"/>
+                                <rect key="frame" x="100" y="404" width="175" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="MENU">
+                                <state key="normal" title="PLAY AGAIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="tappedMenuButton:" destination="2h8-Xf-LVD" eventType="touchUpInside" id="twH-mW-O47"/>
+                                    <action selector="tappedPlayAgainButton:" destination="2h8-Xf-LVD" eventType="touchUpInside" id="Lvb-yM-aNU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loc-S6-jDj">
@@ -327,13 +332,25 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okq-zb-xWl">
+                                <rect key="frame" x="142" y="460" width="91" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="MENU">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedMenuButton:" destination="2h8-Xf-LVD" eventType="touchUpInside" id="Ou2-ce-VSe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
                             <constraint firstItem="1L4-Qt-1Ne" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="EvQ-bK-jhZ"/>
                             <constraint firstItem="loc-S6-jDj" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="Ozh-IR-mhU"/>
+                            <constraint firstItem="okq-zb-xWl" firstAttribute="top" secondItem="1L4-Qt-1Ne" secondAttribute="bottom" constant="5" id="Wdn-Fk-bMA"/>
                             <constraint firstItem="1L4-Qt-1Ne" firstAttribute="top" secondItem="LXB-BW-pnu" secondAttribute="bottom" constant="32" id="eLW-5C-tAg"/>
                             <constraint firstItem="LXB-BW-pnu" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="iij-Zc-1Nf"/>
+                            <constraint firstItem="okq-zb-xWl" firstAttribute="centerX" secondItem="kJM-3t-4PW" secondAttribute="centerX" id="oJt-cd-GEG"/>
                             <constraint firstItem="LXB-BW-pnu" firstAttribute="centerY" secondItem="kJM-3t-4PW" secondAttribute="centerY" id="vsh-Np-Q8K"/>
                             <constraint firstItem="LXB-BW-pnu" firstAttribute="top" secondItem="loc-S6-jDj" secondAttribute="bottom" constant="32" id="w5E-aA-gV9"/>
                         </constraints>

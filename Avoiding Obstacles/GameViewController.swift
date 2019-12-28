@@ -22,7 +22,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerViewWidthContraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var scoreLabel: UILabel!
-
+    @IBOutlet weak var voiceOverBoardViewHeightConstraint: NSLayoutConstraint!
+    
     var visibility = false
     var difficulty = "normal"
     var leaderboard_id = "not_visible_normal"
@@ -73,14 +74,16 @@ class GameViewController: UIViewController {
         self.playerViewBottomConstraint.constant = CGFloat(self.step * 150)
         self.holeWidth = 0.35 * self.screenWidth
         self.holeViewWidthConstraint.constant = self.holeWidth
-        self.playerSize = 0.10 * self.screenWidth
+        self.playerSize = 0.12 * self.screenWidth
         self.playerViewWidthContraint.constant = self.playerSize
         self.playerView.layer.cornerRadius = self.playerSize / 2
+        self.voiceOverBoardViewHeightConstraint.constant = self.screenHeight / 2
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.timer = Timer.scheduledTimer(timeInterval: 0.005, target: self, selector: #selector(fire), userInfo: nil, repeats: false)
+        self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
         self.playBeep(soundName: "loop")
+        self.setSound()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -88,23 +91,38 @@ class GameViewController: UIViewController {
 
         self.timer?.invalidate()
         self.timer = nil
+        self.beepPlayer?.stop()
     }
 
     @objc func fire()
     {
-        if(self.playerView.frame.origin.y == self.barrierView.frame.origin.y) {
-            if(self.horizontalPosition - 24 < self.holePosition - (self.holeWidth / 2) || self.horizontalPosition + 24 > self.holePosition + (self.holeWidth / 2)) {
+        var interval = self.originalDelay - (Double(self.score) * 0.00005)
+        if (interval < 0.0005) {
+            interval = 0.0005
+        }
+
+        self.timer?.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+
+        self.setSound()
+
+        if (self.playerView.frame.origin.y - 32 <= self.barrierView.frame.origin.y && self.playerView.frame.origin.y >= self.barrierView.frame.origin.y - CGFloat(self.playerSize)) {
+            if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2) || self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
                 self.playSound(soundName: "incorrect")
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "gameOver") as! GameOverViewController
                 vc.modalPresentationStyle = .fullScreen
                 vc.score = self.score
                 vc.leaderboard_id = self.leaderboard_id
                 self.present(vc, animated: false, completion: nil)
-            } else {
-                self.playSound(soundName: "correct")
-                self.score += 1
-                self.scoreLabel.text = String(self.score)
+                self.status = "ko"
             }
+        }
+
+        if (self.playerView.frame.origin.y < self.barrierView.frame.origin.y - CGFloat(self.playerSize) && self.status == "ok") {
+            self.playSound(soundName: "correct")
+            self.score += 1
+            self.scoreLabel.text = String(self.score)
+            self.status = "ko"
         }
 
         self.boardView.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
@@ -121,21 +139,19 @@ class GameViewController: UIViewController {
                 self.holeViewWidthConstraint.constant = self.holeWidth
             }
             self.steps = 0
+            self.status = "ok"
         }
         
         self.barrierViewTopConstraint.constant += step
+    }
 
-        var interval = self.originalDelay - (Double(self.score) * 0.0001)
-        if(interval < 0.0005) {
-            interval = 0.0005
-        }
-
-        if(self.playerView.frame.origin.y + 24 >= self.barrierView.frame.origin.y - 16) {
-            if(self.horizontalPosition - 24 < self.holePosition - (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.5 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - 24) * 0.01)
+    func setSound() {
+        if (self.playerView.frame.origin.y + self.playerSize / 2 >= self.barrierView.frame.origin.y - 16) {
+            if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2)) {
+                self.beepPlayer?.volume = Float(0.5 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.01)
                 self.beepPlayer?.pan = 1
-            } else if(self.horizontalPosition + 24 > self.holePosition + (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.5 + (self.horizontalPosition + 24 - self.holePosition + (self.holeWidth / 2)) * 0.01)
+            } else if (self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
+                self.beepPlayer?.volume = Float(0.5 + (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.01)
                 self.beepPlayer?.pan = -1
             } else {
                 self.beepPlayer?.volume = 0
@@ -143,8 +159,6 @@ class GameViewController: UIViewController {
         } else {
             self.beepPlayer?.volume = 0
         }
-
-        self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: false)
     }
     
     func playBeep(soundName: String) {
@@ -192,18 +206,18 @@ class GameViewController: UIViewController {
         
         if let touch = touches.first {
             let location = touch.location(in: self.view)
-            if(location.x < 24) {
-                self.horizontalPosition = 24
-            } else if(location.x > (self.screenWidth - 24)) {
-                self.horizontalPosition = self.screenWidth - 24
-            } else {
-                self.horizontalPosition = location.x
+            if (location.y > self.screenHeight / 2) {
+                if (location.x < self.playerSize / 2) {
+                    self.horizontalPosition = self.playerSize / 2
+                } else if (location.x > (self.screenWidth - self.playerSize / 2)) {
+                    self.horizontalPosition = self.screenWidth - self.playerSize / 2
+                } else {
+                    self.horizontalPosition = location.x
+                }
+
+                playerViewLeftConstraint.constant = self.horizontalPosition
             }
-
-            playerViewLeftConstraint.constant = self.horizontalPosition
-
         }
-        
     }
     
     @IBAction func tappedPause(_ sender: UIButton) {

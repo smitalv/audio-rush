@@ -37,6 +37,11 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
 
+    @IBAction func tappedPlayAgainButton(_ sender: UIButton) {
+        self.dismiss(animated: false)
+        self.presentingViewController?.dismiss(animated: false)
+    }
+    
     @IBAction func tappedMenuButton(_ sender: UIButton) {
         self.dismiss(animated: false)
         self.presentingViewController?.dismiss(animated: false)

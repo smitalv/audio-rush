@@ -30,14 +30,18 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
         authenticateLocalPlayer()
     }
-    
-    @IBAction func tappedPlay(_ sender: UIButton) {
+
+    func startGame() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "game") as! GameViewController
         vc.modalPresentationStyle = .fullScreen
         vc.visibility = self.visibility
         vc.difficulty = self.difficulty
         vc.leaderboard_id = self.leaderboard_id
         self.present(vc, animated: false, completion: nil)
+    }
+    
+    @IBAction func tappedPlay(_ sender: UIButton) {
+        self.startGame()
     }
     
     @IBAction func tappedLeaderboardButton(_ sender: UIButton) {
