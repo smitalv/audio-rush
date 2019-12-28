@@ -65,19 +65,9 @@ class GameViewController: UIViewController {
         let screenSize = UIScreen.main.bounds
         self.screenWidth = screenSize.width
         self.screenHeight = screenSize.height
-        self.horizontalPosition = self.screenWidth / 2
-        self.playerViewLeftConstraint.constant = self.horizontalPosition
-        self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
-        self.holeViewWidthConstraint.constant = self.holeWidth
-        self.holeViewLeftConstraint.constant = self.holePosition;
         self.step = (self.screenHeight - barrierView.frame.origin.y) / 1000
-        self.playerViewBottomConstraint.constant = CGFloat(self.step * 150)
-        self.holeWidth = 0.35 * self.screenWidth
-        self.holeViewWidthConstraint.constant = self.holeWidth
-        self.playerSize = 0.12 * self.screenWidth
-        self.playerViewWidthContraint.constant = self.playerSize
-        self.playerView.layer.cornerRadius = self.playerSize / 2
-        self.voiceOverBoardViewHeightConstraint.constant = self.screenHeight / 2
+
+        self.start()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -94,8 +84,31 @@ class GameViewController: UIViewController {
         self.beepPlayer?.stop()
     }
 
+    func start() {
+        self.boardView.backgroundColor = UIColor(named: "GreenColour")
+        self.holeOverlayView.backgroundColor = self.boardView.backgroundColor
+        self.status = "ok"
+        self.score = 0
+        self.steps = 0
+        self.barrierViewTopConstraint.constant = 12
+        self.scoreLabel.text = String(self.score)
+        self.horizontalPosition = self.screenWidth / 2
+        self.playerViewLeftConstraint.constant = self.horizontalPosition
+        self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
+        self.holeViewWidthConstraint.constant = self.holeWidth
+        self.holeViewLeftConstraint.constant = self.holePosition;
+        self.playerViewBottomConstraint.constant = CGFloat(self.step * 150)
+        self.holeWidth = 0.35 * self.screenWidth
+        self.holeViewWidthConstraint.constant = self.holeWidth
+        self.playerSize = 0.12 * self.screenWidth
+        self.playerViewWidthContraint.constant = self.playerSize
+        self.playerView.layer.cornerRadius = self.playerSize / 2
+        self.voiceOverBoardViewHeightConstraint.constant = self.screenHeight / 2
+    }
+
     @objc func fire()
     {
+        dump(step)
         var interval = self.originalDelay - (Double(self.score) * 0.00005)
         if (interval < 0.0005) {
             interval = 0.0005
