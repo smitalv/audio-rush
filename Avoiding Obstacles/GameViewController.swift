@@ -108,7 +108,6 @@ class GameViewController: UIViewController {
 
     @objc func fire()
     {
-        dump(step)
         var interval = self.originalDelay - (Double(self.score) * 0.00005)
         if (interval < 0.0005) {
             interval = 0.0005
