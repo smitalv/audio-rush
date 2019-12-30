@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B2345EAD23B010880087041C /* loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = B2345EAC23B00EA30087041C /* loop.wav */; };
 		B2345EB123B01B690087041C /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2345EB023B01B690087041C /* GameKit.framework */; };
+		B245EF5023B91DF60022B405 /* GetStartedPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B245EF4F23B91DF60022B405 /* GetStartedPageViewController.swift */; };
 		B28B9EA62393BBB8006D156E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA52393BBB8006D156E /* AppDelegate.swift */; };
 		B28B9EA82393BBB8006D156E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA72393BBB8006D156E /* SceneDelegate.swift */; };
 		B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EA92393BBB8006D156E /* ViewController.swift */; };
@@ -16,7 +17,7 @@
 		B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAE2393BBBA006D156E /* Assets.xcassets */; };
 		B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */; };
 		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
-		CEE162F0262E37A7BDA441E2 /* GetStartedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16B364BA7642CE67E9668 /* GetStartedViewController.swift */; };
+		CEE162F0262E37A7BDA441E2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16B364BA7642CE67E9668 /* FirstViewController.swift */; };
 		CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164F1C73227A63E01A747 /* PauseViewController.swift */; };
 		CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */; };
 		CEE1692FC96D0056CFCBC40E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		B2345EAC23B00EA30087041C /* loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop.wav; path = "/Volumes/Václav - SSD/Projects/Avoiding Obstacles/loop.wav"; sourceTree = "<absolute>"; };
 		B2345EB023B01B690087041C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		B245EF4F23B91DF60022B405 /* GetStartedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedPageViewController.swift; sourceTree = "<group>"; };
 		B28B9EA22393BBB8006D156E /* Avoiding Obstacles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Avoiding Obstacles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28B9EA52393BBB8006D156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28B9EA72393BBB8006D156E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +44,7 @@
 		CEE164F1C73227A63E01A747 /* PauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		CEE168CCCA8A6CDB083A0B59 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
-		CEE16B364BA7642CE67E9668 /* GetStartedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetStartedViewController.swift; sourceTree = "<group>"; };
+		CEE16B364BA7642CE67E9668 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,7 +103,8 @@
 				B28B9EB92393BE03006D156E /* GameViewController.swift */,
 				CEE164F1C73227A63E01A747 /* PauseViewController.swift */,
 				CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */,
-				CEE16B364BA7642CE67E9668 /* GetStartedViewController.swift */,
+				CEE16B364BA7642CE67E9668 /* FirstViewController.swift */,
+				B245EF4F23B91DF60022B405 /* GetStartedPageViewController.swift */,
 			);
 			path = "Avoiding Obstacles";
 			sourceTree = "<group>";
@@ -182,13 +185,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B245EF5023B91DF60022B405 /* GetStartedPageViewController.swift in Sources */,
 				B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */,
 				B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */,
 				B28B9EA62393BBB8006D156E /* AppDelegate.swift in Sources */,
 				B28B9EA82393BBB8006D156E /* SceneDelegate.swift in Sources */,
 				CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */,
 				CEE1692FC96D0056CFCBC40E /* GameOverViewController.swift in Sources */,
-				CEE162F0262E37A7BDA441E2 /* GetStartedViewController.swift in Sources */,
+				CEE162F0262E37A7BDA441E2 /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
