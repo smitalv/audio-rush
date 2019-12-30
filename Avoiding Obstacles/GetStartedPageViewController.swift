@@ -11,8 +11,10 @@ import UIKit
 class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand"),
-                self.newViewController(text: "Move your finger left and right on the bottom of the screen", imageName: "fa-arrows-h"),
-                self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand")]
+                self.newViewController(text: "Move your finger left or right on the bottom of the screen", imageName: "fa-arrows-h"),
+                self.newViewController(text: "Try to fit into the gap. Distance can be determined by the music volume.", imageName: "obstacle-demo"),
+                self.newViewController(text: "Using headphones is recommended. It will let you know the desired direction.", imageName: "oi-headphones"),
+                self.newVisibilityViewController()]
     }()
 
     private func newViewController(text: String, imageName: String) -> UIViewController {
@@ -23,11 +25,16 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
         return vc
     }
 
+    private func newVisibilityViewController() -> UIViewController {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "visibilityPage") as! VisibilityViewController
+        vc.pageViewController = self
+        return vc
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         dataSource = self
-        print(self.orderedViewControllers)
 
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -35,6 +42,10 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
                     animated: true,
                     completion: nil)
         }
+    }
+
+    func setVisibility(visible: Bool) {
+
     }
 
     func goToNextPage(animated: Bool = true, completion: ((Bool) -> Void)? = nil) {

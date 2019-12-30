@@ -17,6 +17,7 @@
 		B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EAE2393BBBA006D156E /* Assets.xcassets */; };
 		B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B28B9EB02393BBBA006D156E /* LaunchScreen.storyboard */; };
 		B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B9EB92393BE03006D156E /* GameViewController.swift */; };
+		B2E4AC1423BA9F5200DB4108 /* VisibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4AC1323BA9F5200DB4108 /* VisibilityViewController.swift */; };
 		CEE162F0262E37A7BDA441E2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16B364BA7642CE67E9668 /* FirstViewController.swift */; };
 		CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164F1C73227A63E01A747 /* PauseViewController.swift */; };
 		CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */; };
@@ -39,6 +40,7 @@
 		B28B9EB12393BBBA006D156E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B28B9EB32393BBBA006D156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B2E4AC1323BA9F5200DB4108 /* VisibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityViewController.swift; sourceTree = "<group>"; };
 		CEE161C49321F9993D325179 /* a4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4.wav; sourceTree = "<group>"; };
 		CEE164B402EC6EC33716F168 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
 		CEE164F1C73227A63E01A747 /* PauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */,
 				CEE16B364BA7642CE67E9668 /* FirstViewController.swift */,
 				B245EF4F23B91DF60022B405 /* GetStartedPageViewController.swift */,
+				B2E4AC1323BA9F5200DB4108 /* VisibilityViewController.swift */,
 			);
 			path = "Avoiding Obstacles";
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E4AC1423BA9F5200DB4108 /* VisibilityViewController.swift in Sources */,
 				B245EF5023B91DF60022B405 /* GetStartedPageViewController.swift in Sources */,
 				B28B9EBA2393BE03006D156E /* GameViewController.swift in Sources */,
 				B28B9EAA2393BBB8006D156E /* ViewController.swift in Sources */,
