@@ -22,4 +22,8 @@ class VisibilityViewController: UIViewController {
     @IBAction func tappedNoButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+
+    @IBAction func tappedSkipButton(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

@@ -42,6 +42,7 @@ class GameViewController: UIViewController {
     var status = "ok"
     var originalDelay = 0.004
     var playerSize: CGFloat = 0
+    var initialFires = 0
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -71,7 +72,8 @@ class GameViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+        self.initialFires = 0
+        self.timer = Timer.scheduledTimer(timeInterval: 0.0005, target: self, selector: #selector(initialFire), userInfo: nil, repeats: true)
         self.playBeep(soundName: "loop")
         self.setSound()
     }
@@ -106,8 +108,16 @@ class GameViewController: UIViewController {
         self.voiceOverBoardViewHeightConstraint.constant = self.screenHeight / 2
     }
 
-    @objc func fire()
-    {
+    @objc func initialFire() {
+        self.initialFires += 1
+        self.setSound()
+        if (self.initialFires > 3000) {
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.0005, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+        }
+    }
+
+    @objc func fire() {
         var interval = self.originalDelay - (Double(self.score) * 0.00005)
         if (interval < 0.0005) {
             interval = 0.0005
@@ -160,14 +170,25 @@ class GameViewController: UIViewController {
     func setSound() {
         if (self.playerView.frame.origin.y + self.playerSize / 2 >= self.barrierView.frame.origin.y - 16) {
             if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.5 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.01)
-                self.beepPlayer?.pan = 1
+                self.beepPlayer?.volume = Float(0.1 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.0015)
+                if (self.beepPlayer?.rate != 0.75) {
+                    self.beepPlayer?.stop()
+                    self.beepPlayer?.enableRate = true
+                    self.beepPlayer?.rate = 0.75
+                    self.beepPlayer?.play()
+                }
             } else if (self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.5 + (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.01)
-                self.beepPlayer?.pan = -1
+                self.beepPlayer?.volume = Float(0.1 + (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.0015)
+                if (self.beepPlayer?.rate != 1.5) {
+                    self.beepPlayer?.stop()
+                    self.beepPlayer?.enableRate = true
+                    self.beepPlayer?.rate = 1.5
+                    self.beepPlayer?.play()
+                }
             } else {
                 self.beepPlayer?.volume = 0
             }
+            dump(self.beepPlayer?.volume)
         } else {
             self.beepPlayer?.volume = 0
         }

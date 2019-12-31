@@ -35,6 +35,7 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
         super.viewDidLoad()
 
         dataSource = self
+        self.isModalInPresentation = true
 
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
