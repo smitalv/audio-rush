@@ -20,9 +20,7 @@
 		B2E4AC1423BA9F5200DB4108 /* VisibilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E4AC1323BA9F5200DB4108 /* VisibilityViewController.swift */; };
 		CEE162F0262E37A7BDA441E2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16B364BA7642CE67E9668 /* FirstViewController.swift */; };
 		CEE167C09D26A0F86163D72E /* PauseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE164F1C73227A63E01A747 /* PauseViewController.swift */; };
-		CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */; };
 		CEE1692FC96D0056CFCBC40E /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */; };
-		CEE16B05FD5DF4E404571323 /* a4.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE161C49321F9993D325179 /* a4.wav */; };
 		CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE168CCCA8A6CDB083A0B59 /* correct.wav */; };
 		CEE16F1B944B29B819BA9167 /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = CEE164B402EC6EC33716F168 /* incorrect.wav */; };
 /* End PBXBuildFile section */
@@ -41,13 +39,11 @@
 		B28B9EB32393BBBA006D156E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B28B9EB92393BE03006D156E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B2E4AC1323BA9F5200DB4108 /* VisibilityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisibilityViewController.swift; sourceTree = "<group>"; };
-		CEE161C49321F9993D325179 /* a4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = a4.wav; sourceTree = "<group>"; };
 		CEE164B402EC6EC33716F168 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
 		CEE164F1C73227A63E01A747 /* PauseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseViewController.swift; sourceTree = "<group>"; };
 		CEE168CCCA8A6CDB083A0B59 /* correct.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = correct.wav; sourceTree = "<group>"; };
 		CEE16A25CC79CCC4DC6C0513 /* GameOverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
 		CEE16B364BA7642CE67E9668 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = d4.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +72,6 @@
 				B28B9EA42393BBB8006D156E /* Avoiding Obstacles */,
 				B28B9EA32393BBB8006D156E /* Products */,
 				B2345EAC23B00EA30087041C /* loop.wav */,
-				CEE16C4AA2A7B2CA5BB7C929 /* d4.wav */,
-				CEE161C49321F9993D325179 /* a4.wav */,
 				CEE164B402EC6EC33716F168 /* incorrect.wav */,
 				CEE168CCCA8A6CDB083A0B59 /* correct.wav */,
 				B2345EAF23B01B690087041C /* Frameworks */,
@@ -173,8 +167,6 @@
 				B28B9EB22393BBBA006D156E /* LaunchScreen.storyboard in Resources */,
 				B28B9EAF2393BBBA006D156E /* Assets.xcassets in Resources */,
 				B28B9EAD2393BBB8006D156E /* Main.storyboard in Resources */,
-				CEE1685308D2D6FA7C6CF11C /* d4.wav in Resources */,
-				CEE16B05FD5DF4E404571323 /* a4.wav in Resources */,
 				CEE16F1B944B29B819BA9167 /* incorrect.wav in Resources */,
 				B2345EAD23B010880087041C /* loop.wav in Resources */,
 				CEE16C03AC2A235D61A8CEC0 /* correct.wav in Resources */,
