@@ -170,7 +170,10 @@ class GameViewController: UIViewController {
     func setSound() {
         if (self.playerView.frame.origin.y + self.playerSize / 2 >= self.barrierView.frame.origin.y - 16) {
             if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.1 + (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.0015)
+                self.beepPlayer?.volume = Float(1.2 - (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.0035)
+                if self.beepPlayer!.volume < Float(0.1) {
+                    self.beepPlayer?.volume = 0.1
+                }
                 if (self.beepPlayer?.rate != 0.75) {
                     self.beepPlayer?.stop()
                     self.beepPlayer?.enableRate = true
@@ -178,7 +181,10 @@ class GameViewController: UIViewController {
                     self.beepPlayer?.play()
                 }
             } else if (self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(0.1 + (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.0015)
+                self.beepPlayer?.volume = Float(1.2 - (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.0035)
+                if self.beepPlayer!.volume < Float(0.1) {
+                    self.beepPlayer?.volume = 0.1
+                }
                 if (self.beepPlayer?.rate != 1.5) {
                     self.beepPlayer?.stop()
                     self.beepPlayer?.enableRate = true
