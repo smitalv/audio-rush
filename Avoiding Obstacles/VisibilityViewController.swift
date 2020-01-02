@@ -16,10 +16,22 @@ class VisibilityViewController: UIViewController {
     }
 
     @IBAction func tapedYesButton(_ sender: UIButton) {
+        let vc = self.pageViewController?.presentingViewController as! ViewController
+        vc.visibility = false
+        vc.visibilityButton.setImage(UIImage(named: "ion-eye-disabled"), for: .normal)
+        vc.visibilityButton.accessibilityLabel = "Visibility disabled. Tap to enable."
+        vc.defaults.set(false, forKey: "visibility")
+
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func tappedNoButton(_ sender: UIButton) {
+        let vc = self.pageViewController?.presentingViewController as! ViewController
+        vc.visibility = true
+        vc.visibilityButton.setImage(UIImage(named: "ion-eye"), for: .normal)
+        vc.visibilityButton.accessibilityLabel = "Visibility enabled. Tap to disable."
+        vc.defaults.set(true, forKey: "visibility")
+
         self.dismiss(animated: true, completion: nil)
     }
 

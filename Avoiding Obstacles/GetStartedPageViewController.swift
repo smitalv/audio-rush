@@ -9,6 +9,10 @@
 import UIKit
 
 class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand"),
                 self.newViewController(text: "Move your finger left or right on the bottom of the screen", imageName: "fa-arrows-h"),

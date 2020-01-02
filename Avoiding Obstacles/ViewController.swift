@@ -16,6 +16,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     
     var gcEnabled = Bool()
     var gcDefaultLeaderBoard = String()
+    var defaults = UserDefaults.standard
 
     var visibility = false
     var difficulty = "normal"
@@ -29,6 +30,34 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         super.viewDidLoad()
 
         authenticateLocalPlayer()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        if (defaults.bool(forKey: "visibility")) {
+            self.visibility = true
+            self.visibilityButton.setImage(UIImage(named: "ion-eye"), for: .normal)
+            self.visibilityButton.accessibilityLabel = "Visibility enabled. Tap to disable."
+        } else {
+            self.visibility = false
+            self.visibilityButton.setImage(UIImage(named: "ion-eye-disabled"), for: .normal)
+            self.visibilityButton.accessibilityLabel = "Visibility disabled. Tap to enable."
+        }
+
+        if (defaults.string(forKey: "difficulty") == "hard") {
+            self.difficulty = "hard"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-fast"), for: .normal)
+            self.difficultyButton.accessibilityLabel = "Hard difficulty. Tap to change."
+        } else if (defaults.string(forKey: "difficulty") == "easy") {
+            self.difficulty = "easy"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-slow"), for: .normal)
+            self.difficultyButton.accessibilityLabel = "Easy difficulty. Tap to change."
+        } else {
+            self.difficulty = "normal"
+            self.difficultyButton.setImage(UIImage(named: "tachometer-normal"), for: .normal)
+            self.difficultyButton.accessibilityLabel = "Normal difficulty. Tap to change."
+        }
     }
 
     func startGame() {
@@ -57,10 +86,12 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             self.visibility = false
             self.visibilityButton.setImage(UIImage(named: "ion-eye-disabled"), for: .normal)
             self.visibilityButton.accessibilityLabel = "Visibility disabled. Tap to enable."
+            defaults.set(false, forKey: "visibility")
         } else {
             self.visibility = true
             self.visibilityButton.setImage(UIImage(named: "ion-eye"), for: .normal)
             self.visibilityButton.accessibilityLabel = "Visibility enabled. Tap to disable."
+            defaults.set(true, forKey: "visibility")
         }
 
         self.updateLeaderboardId()
@@ -71,14 +102,17 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             self.difficulty = "hard"
             self.difficultyButton.setImage(UIImage(named: "tachometer-fast"), for: .normal)
             self.difficultyButton.accessibilityLabel = "Hard difficulty. Tap to change."
+            defaults.set("hard", forKey: "difficulty")
         } else if(self.difficulty == "hard") {
             self.difficulty = "easy"
             self.difficultyButton.setImage(UIImage(named: "tachometer-slow"), for: .normal)
             self.difficultyButton.accessibilityLabel = "Easy difficulty. Tap to change."
+            defaults.set("easy", forKey: "difficulty")
         } else {
             self.difficulty = "normal"
             self.difficultyButton.setImage(UIImage(named: "tachometer-normal"), for: .normal)
             self.difficultyButton.accessibilityLabel = "Normal difficulty. Tap to change."
+            defaults.set("normal", forKey: "difficulty")
         }
 
         self.updateLeaderboardId()
