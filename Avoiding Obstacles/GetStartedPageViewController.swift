@@ -17,16 +17,19 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
         return [self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand"),
                 self.newViewController(text: "Move finger left or right to avoid moving obstacles", imageName: "fa-arrows-h"),
                 self.newViewController(text: "Quieter tones means you need to move longer distance. Continue to hear them", imageName: "oi-headphones"),
-                self.newViewController(text: "Slow tone means move right", imageName: "oi-headphones"),
-                self.newViewController(text: "Fast tone means move left", imageName: "oi-headphones"),
+                self.newViewController(text: "Slow tone means move right", imageName: "oi-headphones", soundRate: 0.75),
+                self.newViewController(text: "Fast tone means move left", imageName: "oi-headphones", soundRate: 1.5),
                 self.newViewController(text: "Tap with two fingers to pause. Good luck!", imageName: "tap-two-finger"),
                 self.newVisibilityViewController()]
     }()
 
-    private func newViewController(text: String, imageName: String) -> UIViewController {
+    private func newViewController(text: String, imageName: String, soundRate: Float? = nil) -> UIViewController {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "getStartedPage") as! FirstViewController
         vc.text = text
         vc.image = UIImage(named: imageName)
+        if soundRate != nil {
+            vc.soundRate = soundRate
+        }
         vc.pageViewController = self
         return vc
     }

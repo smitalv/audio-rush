@@ -58,6 +58,8 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             self.difficultyButton.setImage(UIImage(named: "tachometer-normal"), for: .normal)
             self.difficultyButton.accessibilityLabel = "Normal difficulty. Tap to change."
         }
+
+        self.updateLeaderboardId()
     }
 
     func startGame() {
