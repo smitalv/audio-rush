@@ -22,7 +22,6 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerViewWidthContraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var scoreLabel: UILabel!
-    @IBOutlet weak var voiceOverBoardViewHeightConstraint: NSLayoutConstraint!
     
     var visibility = false
     var difficulty = "normal"
@@ -105,7 +104,6 @@ class GameViewController: UIViewController {
         self.playerSize = 0.12 * self.screenWidth
         self.playerViewWidthContraint.constant = self.playerSize
         self.playerView.layer.cornerRadius = self.playerSize / 2
-        self.voiceOverBoardViewHeightConstraint.constant = self.screenHeight / 2
     }
 
     @objc func initialFire() {
@@ -256,6 +254,13 @@ class GameViewController: UIViewController {
 
             playerViewLeftConstraint.constant = self.horizontalPosition
         }
+    }
+
+    @IBAction func tappedTwoFingers(_ sender: UITapGestureRecognizer) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "pause") as! PauseViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.score = self.score
+        self.present(vc, animated: false, completion: nil)
     }
     
     @IBAction func tappedPause(_ sender: UIButton) {

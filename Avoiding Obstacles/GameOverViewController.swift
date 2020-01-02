@@ -25,6 +25,7 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         // Do any additional setup after loading the view.
 
         scoreLabel.text = String(self.score)
+        scoreLabel.accessibilityLabel = "Game Over " + String(self.score) + " points"
 
         let bestScoreInt = GKScore(leaderboardIdentifier: self.leaderboard_id)
         bestScoreInt.value = Int64(self.score)

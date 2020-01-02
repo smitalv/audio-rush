@@ -22,6 +22,7 @@ class PauseViewController: UIViewController {
         // Do any additional setup after loading the view.
 
         scoreLabel.text = String(self.score)
+        scoreLabel.accessibilityLabel = "Paused " + String(self.score) + " points"
     }
     
     @IBAction func tappedResumeButton(_ sender: UIButton) {

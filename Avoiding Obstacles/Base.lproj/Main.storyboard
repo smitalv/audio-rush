@@ -18,12 +18,17 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVOIDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gie-qh-yc1">
                                 <rect key="frame" x="32" y="36" width="201" height="50.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBSTACLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-DY-9Rb">
                                 <rect key="frame" x="47.5" y="86.5" width="240.5" height="50.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -58,7 +63,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
                                 <rect key="frame" x="96" y="220" width="128" height="128"/>
-                                <accessibility key="accessibilityConfiguration" label="Play"/>
+                                <accessibility key="accessibilityConfiguration" label="Play">
+                                    <accessibilityTraits key="traits" button="YES" selected="YES"/>
+                                </accessibility>
                                 <state key="normal" image="fa-play-circle-o">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -68,7 +75,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a43-Lu-Dsj">
                                 <rect key="frame" x="16" y="220" width="48" height="48"/>
-                                <accessibility key="accessibilityConfiguration" label="Leaderboards"/>
+                                <accessibility key="accessibilityConfiguration" label="Get started"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="0xu-XO-ELd"/>
                                     <constraint firstAttribute="height" constant="48" id="GEU-CZ-Wxq"/>
@@ -133,6 +140,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-rf-11Z">
                                 <rect key="frame" x="122.5" y="245.5" width="75" height="77"/>
+                                <accessibility key="accessibilityConfiguration" label="Paused 23">
+                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -159,6 +169,10 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-HM-bjg">
                                 <rect key="frame" x="70.5" y="156" width="179" height="57.5"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -197,6 +211,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-dU-PfM">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" name="GreenColour"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" selected="YES" allowsDirectInteraction="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="VZs-SD-cKC" appends="YES" id="s2G-hN-oCc"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Wz-XpT">
                                 <rect key="frame" x="0.0" y="52" width="320" height="32"/>
@@ -237,7 +259,10 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-nv-iH7">
                                 <rect key="frame" x="252" y="8" width="32" height="32"/>
-                                <accessibility key="accessibilityConfiguration" label="Pause"/>
+                                <accessibility key="accessibilityConfiguration" label="Pause">
+                                    <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="32" id="Wgh-XU-5RH"/>
                                     <constraint firstAttribute="height" constant="32" id="tJR-Ib-DB9"/>
@@ -249,26 +274,18 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
                                 <rect key="frame" x="36" y="8" width="21.5" height="39"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-x4-gyJ">
-                                <rect key="frame" x="0.0" y="312" width="320" height="256"/>
-                                <accessibility key="accessibilityConfiguration" hint="Move left or right" label="Board">
-                                    <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
-                                    <bool key="isElement" value="YES"/>
-                                </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="256" id="rU0-sa-rna"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.098039215686274508" green="0.63529411764705879" blue="0.43292235344480251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="8bY-x4-gyJ" secondAttribute="trailing" id="9nj-XQ-UFI"/>
                             <constraint firstAttribute="bottom" secondItem="hfL-dU-PfM" secondAttribute="bottom" id="BJI-b2-vMK"/>
-                            <constraint firstItem="8bY-x4-gyJ" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="CCC-bs-qQM"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="top" secondItem="vvb-nv-iH7" secondAttribute="bottom" constant="12" id="D7R-Mt-zoo"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" constant="8" id="MbF-n6-eDI"/>
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="hfL-dU-PfM" secondAttribute="trailing" id="NKO-rd-Lpz"/>
@@ -276,7 +293,6 @@
                             <constraint firstItem="46H-GS-MEq" firstAttribute="trailing" secondItem="Em9-Wz-XpT" secondAttribute="trailing" id="SPS-hq-h7u"/>
                             <constraint firstItem="hfL-dU-PfM" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="T0C-AQ-btD"/>
                             <constraint firstItem="hfL-dU-PfM" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" id="dpI-LK-iPF"/>
-                            <constraint firstItem="46H-GS-MEq" firstAttribute="bottom" secondItem="8bY-x4-gyJ" secondAttribute="bottom" id="egn-J3-g4z"/>
                             <constraint firstItem="ZNO-cy-ywj" firstAttribute="centerX" secondItem="46H-GS-MEq" secondAttribute="leading" constant="128" id="hXZ-PH-7Nw"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="trailing" secondItem="46H-GS-MEq" secondAttribute="trailing" constant="-36" id="pXt-99-5jG"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="qyb-MY-mz2"/>
@@ -298,10 +314,14 @@
                         <outlet property="playerViewLeftConstraint" destination="hXZ-PH-7Nw" id="hTn-BJ-auv"/>
                         <outlet property="playerViewWidthContraint" destination="JWc-02-Tbz" id="y3f-OM-2Ws"/>
                         <outlet property="scoreLabel" destination="B42-Ah-pSO" id="FfD-F3-n1p"/>
-                        <outlet property="voiceOverBoardViewHeightConstraint" destination="rU0-sa-rna" id="biM-cB-r9b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtQ-4c-S6x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTouchesRequired="2" id="VZs-SD-cKC">
+                    <connections>
+                        <action selector="tappedTwoFingers:" destination="Cpu-KF-TeB" id="kmP-Ue-7hF"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="948" y="134.48275862068968"/>
         </scene>
@@ -321,12 +341,16 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoiding Obstacles is an arcade game focused on accessibility" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNv-gE-emc">
                                 <rect key="frame" x="16" y="156" width="288" height="215"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-gr-Pmg">
                                 <rect key="frame" x="124" y="381" width="72" height="72"/>
+                                <accessibility key="accessibilityConfiguration" label="Continue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="FAW-cL-XNj"/>
                                     <constraint firstAttribute="height" constant="72" id="fUT-MF-BVW"/>
@@ -394,6 +418,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXB-BW-pnu">
                                 <rect key="frame" x="122.5" y="245.5" width="75" height="77"/>
+                                <accessibility key="accessibilityConfiguration" label="Game Over 23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -410,6 +435,10 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loc-S6-jDj">
                                 <rect key="frame" x="28" y="155.5" width="264" height="58"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -463,12 +492,16 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to make obstacles invisible?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgU-6b-2a4">
                                 <rect key="frame" x="16" y="156" width="288" height="129"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-IN-q4I">
                                 <rect key="frame" x="48" y="377" width="56" height="56"/>
+                                <accessibility key="accessibilityConfiguration" label="No"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="tpP-Sm-ZN2"/>
                                     <constraint firstAttribute="height" constant="56" id="tzP-Wc-Fg0"/>
@@ -482,6 +515,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izm-gv-ARG">
                                 <rect key="frame" x="216" y="377" width="56" height="56"/>
+                                <accessibility key="accessibilityConfiguration" label="Yes"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="1EP-xp-oQ7"/>
                                     <constraint firstAttribute="height" constant="56" id="Qnz-r9-gcl"/>
