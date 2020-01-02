@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="width" constant="48" id="0xu-XO-ELd"/>
                                     <constraint firstAttribute="height" constant="48" id="GEU-CZ-Wxq"/>
                                 </constraints>
-                                <state key="normal" image="fa-info">
+                                <state key="normal" image="fa-question">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -531,9 +531,9 @@
     <resources>
         <image name="fa-arrow-circle-o-right" width="512" height="512"/>
         <image name="fa-check" width="256" height="256"/>
-        <image name="fa-info" width="256" height="256"/>
         <image name="fa-pause" width="128" height="128"/>
         <image name="fa-play-circle-o" width="128" height="128"/>
+        <image name="fa-question" width="256" height="256"/>
         <image name="fa-trophy" width="128" height="128"/>
         <image name="feather-cross" width="256" height="256"/>
         <image name="ion-android-hand" width="512" height="512"/>

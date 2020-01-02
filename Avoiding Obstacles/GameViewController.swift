@@ -170,9 +170,10 @@ class GameViewController: UIViewController {
     func setSound() {
         if (self.playerView.frame.origin.y + self.playerSize / 2 >= self.barrierView.frame.origin.y - 16) {
             if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(1.2 - (self.holePosition + (self.holeWidth / 2) - self.horizontalPosition - self.playerSize / 2) * 0.0035)
-                if self.beepPlayer!.volume < Float(0.1) {
-                    self.beepPlayer?.volume = 0.1
+                let distance = (self.holePosition - self.holeWidth / 2) - (self.horizontalPosition - self.playerSize / 2)
+                self.beepPlayer?.volume = 1 - Float(distance) / Float(self.screenWidth)
+                if self.beepPlayer!.volume < Float(0.25) {
+                    self.beepPlayer?.volume = 0.25
                 }
                 if (self.beepPlayer?.rate != 0.75) {
                     self.beepPlayer?.stop()
@@ -181,9 +182,10 @@ class GameViewController: UIViewController {
                     self.beepPlayer?.play()
                 }
             } else if (self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
-                self.beepPlayer?.volume = Float(1.2 - (self.horizontalPosition + self.playerSize / 2 - self.holePosition + (self.holeWidth / 2)) * 0.0035)
-                if self.beepPlayer!.volume < Float(0.1) {
-                    self.beepPlayer?.volume = 0.1
+                let distance = (self.horizontalPosition + self.playerSize / 2) - (self.holePosition + self.holeWidth / 2)
+                self.beepPlayer?.volume = 1 - Float(distance) / Float(self.screenWidth)
+                if self.beepPlayer!.volume < Float(0.25) {
+                    self.beepPlayer?.volume = 0.25
                 }
                 if (self.beepPlayer?.rate != 1.5) {
                     self.beepPlayer?.stop()
@@ -194,7 +196,6 @@ class GameViewController: UIViewController {
             } else {
                 self.beepPlayer?.volume = 0
             }
-            dump(self.beepPlayer?.volume)
         } else {
             self.beepPlayer?.volume = 0
         }
@@ -245,17 +246,15 @@ class GameViewController: UIViewController {
         
         if let touch = touches.first {
             let location = touch.location(in: self.view)
-            if (location.y > self.screenHeight / 2) {
-                if (location.x < self.playerSize / 2) {
-                    self.horizontalPosition = self.playerSize / 2
-                } else if (location.x > (self.screenWidth - self.playerSize / 2)) {
-                    self.horizontalPosition = self.screenWidth - self.playerSize / 2
-                } else {
-                    self.horizontalPosition = location.x
-                }
-
-                playerViewLeftConstraint.constant = self.horizontalPosition
+            if (location.x < self.playerSize / 2) {
+                self.horizontalPosition = self.playerSize / 2
+            } else if (location.x > (self.screenWidth - self.playerSize / 2)) {
+                self.horizontalPosition = self.screenWidth - self.playerSize / 2
+            } else {
+                self.horizontalPosition = location.x
             }
+
+            playerViewLeftConstraint.constant = self.horizontalPosition
         }
     }
     

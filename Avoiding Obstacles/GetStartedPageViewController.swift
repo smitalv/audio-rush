@@ -15,9 +15,11 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
         return [self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand"),
-                self.newViewController(text: "Move your finger left or right on the bottom of the screen", imageName: "fa-arrows-h"),
-                self.newViewController(text: "Try to fit into the gap. Distance can be determined by the music volume.", imageName: "obstacle-demo"),
-                self.newViewController(text: "Using headphones is recommended. It will let you know the desired direction.", imageName: "oi-headphones"),
+                self.newViewController(text: "Move finger left or right to avoid moving obstacles", imageName: "fa-arrows-h"),
+                self.newViewController(text: "Quieter tones means you need to move longer distance. Continue to hear them", imageName: "oi-headphones"),
+                self.newViewController(text: "Slow tone means move right", imageName: "oi-headphones"),
+                self.newViewController(text: "Fast tone means move left", imageName: "oi-headphones"),
+                self.newViewController(text: "Tap with two fingers to pause. Good luck!", imageName: "tap-two-finger"),
                 self.newVisibilityViewController()]
     }()
 
