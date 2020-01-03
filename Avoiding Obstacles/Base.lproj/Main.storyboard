@@ -272,13 +272,16 @@
                                     <action selector="tappedPause:" destination="Cpu-KF-TeB" eventType="touchUpInside" id="ngA-32-TTb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
-                                <rect key="frame" x="36" y="8" width="21.5" height="39"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
+                                <rect key="frame" x="118" y="64" width="84" height="153"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
                                 </accessibility>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="FI3-Li-BI4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="128"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -294,10 +297,10 @@
                             <constraint firstItem="hfL-dU-PfM" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="T0C-AQ-btD"/>
                             <constraint firstItem="hfL-dU-PfM" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" id="dpI-LK-iPF"/>
                             <constraint firstItem="ZNO-cy-ywj" firstAttribute="centerX" secondItem="46H-GS-MEq" secondAttribute="leading" constant="128" id="hXZ-PH-7Nw"/>
+                            <constraint firstItem="B42-Ah-pSO" firstAttribute="centerX" secondItem="hT2-S4-NqL" secondAttribute="centerX" id="pRH-xb-eaU"/>
                             <constraint firstItem="vvb-nv-iH7" firstAttribute="trailing" secondItem="46H-GS-MEq" secondAttribute="trailing" constant="-36" id="pXt-99-5jG"/>
                             <constraint firstItem="Em9-Wz-XpT" firstAttribute="leading" secondItem="46H-GS-MEq" secondAttribute="leading" id="qyb-MY-mz2"/>
-                            <constraint firstItem="B42-Ah-pSO" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" constant="8" id="wXa-wf-wQa"/>
-                            <constraint firstItem="B42-Ah-pSO" firstAttribute="leading" secondItem="hT2-S4-NqL" secondAttribute="leading" constant="36" id="zyk-Mk-oD4"/>
+                            <constraint firstItem="B42-Ah-pSO" firstAttribute="top" secondItem="hT2-S4-NqL" secondAttribute="top" constant="64" id="wXa-wf-wQa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="46H-GS-MEq"/>
                     </view>

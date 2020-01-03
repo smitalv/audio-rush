@@ -141,7 +141,6 @@ class GameViewController: UIViewController {
         if (self.playerView.frame.origin.y < self.barrierView.frame.origin.y - CGFloat(self.playerSize) && self.status == "ok") {
             self.playSound(soundName: "correct")
             self.score += 1
-            self.scoreLabel.text = String(self.score)
             self.status = "ko"
         }
 
@@ -150,6 +149,7 @@ class GameViewController: UIViewController {
         
         self.steps += 1
         if(self.steps >= 1000) {
+            self.scoreLabel.text = String(self.score)
             self.barrierViewTopConstraint.constant = 12
             self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
             self.holeViewLeftConstraint.constant = self.holePosition;
@@ -160,6 +160,16 @@ class GameViewController: UIViewController {
             }
             self.steps = 0
             self.status = "ok"
+        }
+
+        if (self.visibility && self.barrierViewTopConstraint.constant < 270) {
+            self.scoreLabel.alpha = (1 - (270 - self.barrierViewTopConstraint.constant) * 0.01)
+        } else if (!self.visibility && self.steps < 150) {
+            self.scoreLabel.alpha = (1 - CGFloat(150 - self.steps) * 0.01)
+        } else if (self.steps > 800) {
+            self.scoreLabel.alpha = CGFloat(1000 - self.steps) * 0.0005
+        } else {
+            self.scoreLabel.alpha = 1
         }
         
         self.barrierViewTopConstraint.constant += step
