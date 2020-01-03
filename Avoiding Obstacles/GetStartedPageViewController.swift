@@ -19,7 +19,7 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
                 self.newViewController(text: "Quieter tones means you need to move longer distance. Continue to hear them", imageName: "oi-headphones"),
                 self.newViewController(text: "Slow tone means move right", imageName: "oi-headphones", soundRate: 0.75),
                 self.newViewController(text: "Fast tone means move left", imageName: "oi-headphones", soundRate: 1.5),
-                self.newViewController(text: "Tap with two fingers to pause. Good luck!", imageName: "tap-two-finger"),
+                self.newViewController(text: "Tap anywhere with two fingers to pause", imageName: "tap-two-finger"),
                 self.newVisibilityViewController()]
     }()
 

@@ -35,6 +35,12 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        if (!defaults.bool(forKey: "initialized")) {
+            defaults.set(true, forKey: "initialized")
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "getStarted") as! GetStartedPageViewController
+            self.present(vc, animated: true, completion: nil)
+        }
+
         if (defaults.bool(forKey: "visibility")) {
             self.visibility = true
             self.visibilityButton.setImage(UIImage(named: "ion-eye"), for: .normal)

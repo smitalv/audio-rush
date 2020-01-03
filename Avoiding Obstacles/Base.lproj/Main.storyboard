@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-Z6-uVP">
-                                <rect key="frame" x="256" y="220" width="48" height="48"/>
+                                <rect key="frame" x="320" y="156" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Visibility disabled. Tap to enable."/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Vp5-rz-UKr"/>
@@ -48,7 +48,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-3I-8av">
-                                <rect key="frame" x="256" y="300" width="48" height="48"/>
+                                <rect key="frame" x="320" y="364" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Normal difficulty. Tap to change."/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MCG-bV-x67"/>
@@ -62,7 +62,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="96" y="220" width="128" height="128"/>
+                                <rect key="frame" x="32" y="156" width="256" height="256"/>
                                 <accessibility key="accessibilityConfiguration" label="Play">
                                     <accessibilityTraits key="traits" button="YES" selected="YES"/>
                                 </accessibility>
@@ -74,7 +74,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a43-Lu-Dsj">
-                                <rect key="frame" x="16" y="220" width="48" height="48"/>
+                                <rect key="frame" x="-48" y="156" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Get started"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="0xu-XO-ELd"/>
@@ -88,7 +88,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-EH-NrE">
-                                <rect key="frame" x="16" y="300" width="48" height="48"/>
+                                <rect key="frame" x="-48" y="364" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Leaderboards"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="25H-XI-gVY"/>
@@ -404,7 +404,7 @@
         <!--Get Started Page View Controller-->
         <scene sceneID="aFX-Ua-17Z">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ae1-7a-FKl" customClass="GetStartedPageViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="getStarted" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="ae1-7a-FKl" customClass="GetStartedPageViewController" customModule="Avoiding_Obstacles" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="ckf-aV-gLu"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EeE-BZ-iOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
