@@ -52,6 +52,11 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
                     animated: true,
                     completion: nil)
         }
+
+        if (!UserDefaults.standard.bool(forKey: "initialized")) {
+            (self.presentingViewController as! ViewController).authenticateLocalPlayer()
+            UserDefaults.standard.set(true, forKey: "initialized")
+        }
     }
 
     func setVisibility(visible: Bool) {

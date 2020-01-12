@@ -16,25 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVOIDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gie-qh-yc1">
-                                <rect key="frame" x="32" y="36" width="201" height="50.5"/>
-                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBSTACLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-DY-9Rb">
-                                <rect key="frame" x="47.5" y="86.5" width="240.5" height="50.5"/>
-                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles">
-                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
-                                    <bool key="isElement" value="NO"/>
-                                </accessibility>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-Z6-uVP">
-                                <rect key="frame" x="320" y="156" width="48" height="48"/>
+                                <rect key="frame" x="256" y="220" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Visibility disabled. Tap to enable."/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Vp5-rz-UKr"/>
@@ -48,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-3I-8av">
-                                <rect key="frame" x="320" y="364" width="48" height="48"/>
+                                <rect key="frame" x="256" y="300" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Normal difficulty. Tap to change."/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MCG-bV-x67"/>
@@ -62,9 +45,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <rect key="frame" x="96" y="220" width="128" height="128"/>
                                 <accessibility key="accessibilityConfiguration" label="Play">
-                                    <accessibilityTraits key="traits" button="YES" selected="YES"/>
+                                    <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
                                 <state key="normal" image="fa-play-circle-o">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -74,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a43-Lu-Dsj">
-                                <rect key="frame" x="-48" y="156" width="48" height="48"/>
+                                <rect key="frame" x="16" y="220" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Get started"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="0xu-XO-ELd"/>
@@ -88,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-EH-NrE">
-                                <rect key="frame" x="-48" y="364" width="48" height="48"/>
+                                <rect key="frame" x="16" y="300" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Leaderboards"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="25H-XI-gVY"/>
@@ -101,21 +84,57 @@
                                     <action selector="tappedLeaderboardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yQZ-w8-OxV"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX5-Kx-05n">
+                                <rect key="frame" x="15" y="20" width="290" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVOIDING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gie-qh-yc1">
+                                        <rect key="frame" x="0.0" y="0.0" width="201" height="50.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OBSTACLES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-DY-9Rb">
+                                        <rect key="frame" x="49.5" y="49.5" width="240.5" height="50.5"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="mEN-DY-9Rb" secondAttribute="bottom" id="6qW-VZ-zli"/>
+                                    <constraint firstItem="gie-qh-yc1" firstAttribute="top" secondItem="aX5-Kx-05n" secondAttribute="top" id="9y6-tB-J6o"/>
+                                    <constraint firstAttribute="trailing" secondItem="mEN-DY-9Rb" secondAttribute="trailing" id="MDX-WM-7MJ"/>
+                                    <constraint firstAttribute="width" constant="290" id="Ov2-rj-6Ar"/>
+                                    <constraint firstAttribute="height" constant="100" id="fIF-Rf-UEZ"/>
+                                    <constraint firstItem="gie-qh-yc1" firstAttribute="leading" secondItem="aX5-Kx-05n" secondAttribute="leading" id="i3P-Cn-ogf"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
-                            <constraint firstItem="gie-qh-yc1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="0rM-rc-xqg"/>
-                            <constraint firstItem="gie-qh-yc1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="36" id="1C6-dz-y8k"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="bottom" secondItem="CUC-EH-NrE" secondAttribute="bottom" id="2CR-Oz-1F9"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mEN-DY-9Rb" secondAttribute="trailing" constant="32" id="4sf-Cl-3vt"/>
                             <constraint firstItem="yHZ-Z6-uVP" firstAttribute="top" secondItem="rcb-ye-GE0" secondAttribute="top" id="795-f8-FuT"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="leading" secondItem="a43-Lu-Dsj" secondAttribute="trailing" constant="32" id="7CK-4R-ZLL"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BRT-TC-Oa3"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JFT-43-KEr"/>
+                            <constraint firstItem="aX5-Kx-05n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RoP-tP-bXg"/>
                             <constraint firstItem="g4Y-3I-8av" firstAttribute="leading" secondItem="rcb-ye-GE0" secondAttribute="trailing" constant="32" id="SON-qs-eKy"/>
+                            <constraint firstItem="aX5-Kx-05n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Tsm-7R-1hd"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="bottom" secondItem="g4Y-3I-8av" secondAttribute="bottom" id="YeI-se-j0x"/>
                             <constraint firstItem="yHZ-Z6-uVP" firstAttribute="leading" secondItem="rcb-ye-GE0" secondAttribute="trailing" constant="32" id="bbU-G8-aok"/>
-                            <constraint firstItem="mEN-DY-9Rb" firstAttribute="top" secondItem="gie-qh-yc1" secondAttribute="bottom" id="cAE-vY-0Mv"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="top" secondItem="a43-Lu-Dsj" secondAttribute="top" id="d0n-hL-PgT"/>
                             <constraint firstItem="rcb-ye-GE0" firstAttribute="leading" secondItem="CUC-EH-NrE" secondAttribute="trailing" constant="32" id="vw9-FY-QFr"/>
                         </constraints>
@@ -141,7 +160,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-rf-11Z">
                                 <rect key="frame" x="122.5" y="245.5" width="75" height="77"/>
                                 <accessibility key="accessibilityConfiguration" label="Paused 23">
-                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
+                                    <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -344,15 +363,22 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoiding Obstacles is an arcade game focused on accessibility" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNv-gE-emc">
                                 <rect key="frame" x="16" y="156" width="288" height="215"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
-                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Je-KS-hcW">
+                                <rect key="frame" x="16" y="497" width="66" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <state key="normal" title="SKIP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedSkipButton:" destination="DGp-JA-QFL" eventType="touchUpInside" id="fVO-nO-5Zn"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-gr-Pmg">
-                                <rect key="frame" x="124" y="381" width="72" height="72"/>
+                                <rect key="frame" x="232" y="476" width="72" height="72"/>
                                 <accessibility key="accessibilityConfiguration" label="Continue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="FAW-cL-XNj"/>
@@ -365,29 +391,19 @@
                                     <action selector="tappedContinueButton:" destination="DGp-JA-QFL" eventType="touchUpInside" id="Xb3-Vn-AJX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Je-KS-hcW">
-                                <rect key="frame" x="238" y="497" width="66" height="51"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <state key="normal" title="SKIP">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="tappedSkipButton:" destination="DGp-JA-QFL" eventType="touchUpInside" id="fVO-nO-5Zn"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="GreenColour"/>
                         <constraints>
                             <constraint firstItem="aNv-gE-emc" firstAttribute="leading" secondItem="Yh4-82-jI1" secondAttribute="leading" constant="16" id="0vg-dE-GNA"/>
                             <constraint firstItem="Tkf-mR-Qqf" firstAttribute="leading" secondItem="Yh4-82-jI1" secondAttribute="leading" id="6Sk-LE-z8E"/>
                             <constraint firstItem="aNv-gE-emc" firstAttribute="top" secondItem="Tkf-mR-Qqf" secondAttribute="bottom" constant="8" id="F94-Kj-kNX"/>
-                            <constraint firstItem="Yh4-82-jI1" firstAttribute="trailing" secondItem="4Je-KS-hcW" secondAttribute="trailing" constant="16" id="HbE-98-jhB"/>
-                            <constraint firstItem="4Je-KS-hcW" firstAttribute="top" secondItem="Xfn-gr-Pmg" secondAttribute="bottom" constant="44" id="Qb1-Xk-1UZ"/>
+                            <constraint firstItem="Yh4-82-jI1" firstAttribute="bottom" secondItem="Xfn-gr-Pmg" secondAttribute="bottom" constant="20" id="Uca-RO-cJ8"/>
+                            <constraint firstItem="Yh4-82-jI1" firstAttribute="trailing" secondItem="Xfn-gr-Pmg" secondAttribute="trailing" constant="16" id="Yas-Du-20c"/>
                             <constraint firstItem="Yh4-82-jI1" firstAttribute="trailing" secondItem="Tkf-mR-Qqf" secondAttribute="trailing" id="ZjM-Yk-5oe"/>
                             <constraint firstItem="Tkf-mR-Qqf" firstAttribute="top" secondItem="Yh4-82-jI1" secondAttribute="top" constant="20" id="aHS-8h-Xf3"/>
                             <constraint firstItem="Yh4-82-jI1" firstAttribute="bottom" secondItem="4Je-KS-hcW" secondAttribute="bottom" constant="20" id="io0-eV-f2D"/>
+                            <constraint firstItem="4Je-KS-hcW" firstAttribute="leading" secondItem="Yh4-82-jI1" secondAttribute="leading" constant="16" id="mHg-tC-QBI"/>
                             <constraint firstItem="Yh4-82-jI1" firstAttribute="trailing" secondItem="aNv-gE-emc" secondAttribute="trailing" constant="16" id="mMe-wy-540"/>
-                            <constraint firstItem="Xfn-gr-Pmg" firstAttribute="centerX" secondItem="rw3-Sq-wXL" secondAttribute="centerX" id="w1O-Yg-6c0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yh4-82-jI1"/>
                     </view>
@@ -495,9 +511,6 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to make obstacles invisible?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgU-6b-2a4">
                                 <rect key="frame" x="16" y="156" width="288" height="129"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" selected="YES" staticText="YES"/>
-                                </accessibility>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -531,7 +544,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-ny-Pi1">
-                                <rect key="frame" x="238" y="497" width="66" height="51"/>
+                                <rect key="frame" x="16" y="497" width="66" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="SKIP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -548,11 +561,11 @@
                             <constraint firstItem="S7a-IN-q4I" firstAttribute="leading" secondItem="i1z-iR-9y1" secondAttribute="leading" constant="48" id="7hE-gq-Q2M"/>
                             <constraint firstItem="NRF-ny-Pi1" firstAttribute="top" secondItem="Izm-gv-ARG" secondAttribute="bottom" constant="64" id="HTc-yr-JeA"/>
                             <constraint firstItem="i1z-iR-9y1" firstAttribute="trailing" secondItem="Izm-gv-ARG" secondAttribute="trailing" constant="48" id="Htq-Tm-6DY"/>
+                            <constraint firstItem="NRF-ny-Pi1" firstAttribute="leading" secondItem="i1z-iR-9y1" secondAttribute="leading" constant="16" id="OEO-OZ-K5Q"/>
                             <constraint firstItem="i1z-iR-9y1" firstAttribute="bottom" secondItem="NRF-ny-Pi1" secondAttribute="bottom" constant="20" id="WEB-Uz-oA1"/>
                             <constraint firstItem="i1z-iR-9y1" firstAttribute="trailing" secondItem="qgU-6b-2a4" secondAttribute="trailing" constant="16" id="eUD-ca-PxE"/>
                             <constraint firstItem="pKs-Oh-ZfU" firstAttribute="leading" secondItem="i1z-iR-9y1" secondAttribute="leading" id="fqi-yc-rER"/>
                             <constraint firstItem="i1z-iR-9y1" firstAttribute="trailing" secondItem="pKs-Oh-ZfU" secondAttribute="trailing" id="jVn-b3-jZd"/>
-                            <constraint firstItem="i1z-iR-9y1" firstAttribute="trailing" secondItem="NRF-ny-Pi1" secondAttribute="trailing" constant="16" id="kv0-Pe-eVI"/>
                             <constraint firstItem="qgU-6b-2a4" firstAttribute="leading" secondItem="i1z-iR-9y1" secondAttribute="leading" constant="16" id="mFJ-YS-Wek"/>
                             <constraint firstItem="NRF-ny-Pi1" firstAttribute="top" secondItem="S7a-IN-q4I" secondAttribute="bottom" constant="64" id="v7A-Ir-UXg"/>
                         </constraints>
