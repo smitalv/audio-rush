@@ -14,9 +14,9 @@ class GetStartedPageViewController: UIPageViewController, UIPageViewControllerDe
     }
 
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newViewController(text: "Avoiding Obstacles is an arcade game focused on accessibility", imageName: "ion-android-hand"),
+        return [self.newViewController(text: "Audio Rush is an arcade game focused on accessibility", imageName: "ion-android-hand"),
                 self.newViewController(text: "Move finger left or right to avoid moving obstacles", imageName: "fa-arrows-h"),
-                self.newViewController(text: "Quieter tones means you need to move longer distance. Continue to hear them", imageName: "oi-headphones"),
+                self.newViewController(text: "Quieter tones means you need to move longer distance. Tap continue to hear them", imageName: "oi-headphones"),
                 self.newViewController(text: "Slow tone means move right", imageName: "oi-headphones", soundRate: 0.75),
                 self.newViewController(text: "Fast tone means move left", imageName: "oi-headphones", soundRate: 1.5),
                 self.newViewController(text: "Tap anywhere with two fingers to pause", imageName: "tap-two-finger"),

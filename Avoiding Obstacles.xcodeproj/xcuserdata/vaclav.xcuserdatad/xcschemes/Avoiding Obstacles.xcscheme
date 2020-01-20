@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B28B9EA12393BBB8006D156E"
-               BuildableName = "Avoiding Obstacles.app"
+               BuildableName = "Audio Rush.app"
                BlueprintName = "Avoiding Obstacles"
                ReferencedContainer = "container:Avoiding Obstacles.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B28B9EA12393BBB8006D156E"
-            BuildableName = "Avoiding Obstacles.app"
+            BuildableName = "Audio Rush.app"
             BlueprintName = "Avoiding Obstacles"
             ReferencedContainer = "container:Avoiding Obstacles.xcodeproj">
          </BuildableReference>
