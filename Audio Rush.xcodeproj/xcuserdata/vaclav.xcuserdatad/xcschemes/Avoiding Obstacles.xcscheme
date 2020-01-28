@@ -15,8 +15,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B28B9EA12393BBB8006D156E"
                BuildableName = "Audio Rush.app"
-               BlueprintName = "Avoiding Obstacles"
-               ReferencedContainer = "container:Avoiding Obstacles.xcodeproj">
+               BlueprintName = "Audio Rush"
+               ReferencedContainer = "container:Audio Rush.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,8 +45,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B28B9EA12393BBB8006D156E"
             BuildableName = "Audio Rush.app"
-            BlueprintName = "Avoiding Obstacles"
-            ReferencedContainer = "container:Avoiding Obstacles.xcodeproj">
+            BlueprintName = "Audio Rush"
+            ReferencedContainer = "container:Audio Rush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>

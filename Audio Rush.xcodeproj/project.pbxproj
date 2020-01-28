@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B28B9EA12393BBB8006D156E /* Avoiding Obstacles */ = {
+		B28B9EA12393BBB8006D156E /* Audio Rush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Avoiding Obstacles" */;
+			buildConfigurationList = B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Audio Rush" */;
 			buildPhases = (
 				B28B9E9E2393BBB8006D156E /* Sources */,
 				B28B9E9F2393BBB8006D156E /* Frameworks */,
@@ -121,7 +121,7 @@
 			);
 			dependencies = (
 			);
-			name = "Avoiding Obstacles";
+			name = "Audio Rush";
 			productName = "Avoiding Obstacles";
 			productReference = B28B9EA22393BBB8006D156E /* Audio Rush.app */;
 			productType = "com.apple.product-type.application";
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Avoiding Obstacles" */;
+			buildConfigurationList = B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Audio Rush" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B28B9EA12393BBB8006D156E /* Avoiding Obstacles */,
+				B28B9EA12393BBB8006D156E /* Audio Rush */,
 			);
 		};
 /* End PBXProject section */
@@ -371,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Avoiding Obstacles" */ = {
+		B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Audio Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B28B9EB42393BBBA006D156E /* Debug */,
@@ -380,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Avoiding Obstacles" */ = {
+		B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Audio Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B28B9EB72393BBBA006D156E /* Debug */,

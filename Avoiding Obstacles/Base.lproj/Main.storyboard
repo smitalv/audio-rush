@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yHZ-Z6-uVP">
-                                <rect key="frame" x="320" y="156" width="48" height="48"/>
+                                <rect key="frame" x="367" y="320" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Visibility disabled. Tap to enable."/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="Vp5-rz-UKr"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g4Y-3I-8av">
-                                <rect key="frame" x="320" y="364" width="48" height="48"/>
+                                <rect key="frame" x="367" y="528" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Normal difficulty. Tap to change."/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="MCG-bV-x67"/>
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcb-ye-GE0">
-                                <rect key="frame" x="32" y="156" width="256" height="256"/>
+                                <rect key="frame" x="79" y="320" width="256" height="256"/>
                                 <accessibility key="accessibilityConfiguration" label="Play">
                                     <accessibilityTraits key="traits" button="YES"/>
                                 </accessibility>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a43-Lu-Dsj">
-                                <rect key="frame" x="-48" y="156" width="48" height="48"/>
+                                <rect key="frame" x="-1" y="320" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Get started"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="0xu-XO-ELd"/>
@@ -71,7 +71,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CUC-EH-NrE">
-                                <rect key="frame" x="-48" y="364" width="48" height="48"/>
+                                <rect key="frame" x="-1" y="528" width="48" height="48"/>
                                 <accessibility key="accessibilityConfiguration" label="Leaderboards"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="48" id="25H-XI-gVY"/>
@@ -85,10 +85,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aX5-Kx-05n">
-                                <rect key="frame" x="70" y="20" width="180" height="100"/>
+                                <rect key="frame" x="117" y="64" width="180" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUDIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gie-qh-yc1">
-                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="133" height="51"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             <bool key="isElement" value="NO"/>
@@ -98,7 +98,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RUSH" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEN-DY-9Rb">
-                                        <rect key="frame" x="64.5" y="49" width="115.5" height="51"/>
+                                        <rect key="frame" x="64" y="49" width="116" height="51"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                             <bool key="isElement" value="NO"/>
@@ -109,7 +109,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <accessibility key="accessibilityConfiguration" label="Avoiding Obstacles">
+                                <accessibility key="accessibilityConfiguration" label="Audio Rush">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -154,11 +154,11 @@
             <objects>
                 <viewController storyboardIdentifier="pause" id="RbG-sq-Umy" customClass="PauseViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kic-LE-Mez">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9UU-rf-11Z">
-                                <rect key="frame" x="122.5" y="245.5" width="75" height="77"/>
+                                <rect key="frame" x="169.5" y="409.5" width="75" height="77"/>
                                 <accessibility key="accessibilityConfiguration" label="Paused 23">
                                     <accessibilityTraits key="traits" staticText="YES"/>
                                 </accessibility>
@@ -167,7 +167,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjr-B4-8QO">
-                                <rect key="frame" x="97.5" y="354.5" width="125" height="51"/>
+                                <rect key="frame" x="144.5" y="518.5" width="125" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="RESUME">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -177,7 +177,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Vv-Ut-fof">
-                                <rect key="frame" x="114.5" y="410.5" width="91" height="51"/>
+                                <rect key="frame" x="161.5" y="574.5" width="91" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="MENU">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,7 +187,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PAUSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMx-HM-bjg">
-                                <rect key="frame" x="70.5" y="156" width="179" height="57.5"/>
+                                <rect key="frame" x="117.5" y="319.5" width="179" height="58"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -224,11 +224,11 @@
             <objects>
                 <viewController storyboardIdentifier="game" id="Cpu-KF-TeB" customClass="GameViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hT2-S4-NqL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-dU-PfM">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" name="GreenColour"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" selected="YES" allowsDirectInteraction="YES"/>
@@ -240,7 +240,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Em9-Wz-XpT">
-                                <rect key="frame" x="0.0" y="52" width="320" height="32"/>
+                                <rect key="frame" x="0.0" y="52" width="414" height="32"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ljx-6k-YAz">
                                         <rect key="frame" x="64" y="0.0" width="128" height="32"/>
@@ -269,7 +269,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNO-cy-ywj">
-                                <rect key="frame" x="104" y="448" width="48" height="48"/>
+                                <rect key="frame" x="104" y="742" width="48" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ZNO-cy-ywj" secondAttribute="height" multiplier="1:1" id="1N4-4R-sDV"/>
@@ -277,7 +277,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-nv-iH7">
-                                <rect key="frame" x="252" y="8" width="32" height="32"/>
+                                <rect key="frame" x="346" y="8" width="32" height="32"/>
                                 <accessibility key="accessibilityConfiguration" label="Pause">
                                     <accessibilityTraits key="traits" button="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -292,7 +292,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B42-Ah-pSO">
-                                <rect key="frame" x="118" y="64" width="84" height="153"/>
+                                <rect key="frame" x="165" y="64" width="84" height="153"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -352,23 +352,23 @@
             <objects>
                 <viewController storyboardIdentifier="getStartedPage" id="DGp-JA-QFL" customClass="FirstViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rw3-Sq-wXL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ion-android-hand" translatesAutoresizingMaskIntoConstraints="NO" id="Tkf-mR-Qqf">
-                                <rect key="frame" x="0.0" y="20" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="3aH-NW-9du"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avoiding Obstacles is an arcade game focused on accessibility" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNv-gE-emc">
-                                <rect key="frame" x="16" y="156" width="288" height="215"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Audio Rush is an arcade game focused on accessibility" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNv-gE-emc">
+                                <rect key="frame" x="16" y="200" width="382" height="129"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Je-KS-hcW">
-                                <rect key="frame" x="16" y="497" width="66" height="51"/>
+                                <rect key="frame" x="16" y="791" width="66" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="SKIP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -378,7 +378,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfn-gr-Pmg">
-                                <rect key="frame" x="232" y="476" width="72" height="72"/>
+                                <rect key="frame" x="326" y="770" width="72" height="72"/>
                                 <accessibility key="accessibilityConfiguration" label="Continue"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="72" id="FAW-cL-XNj"/>
@@ -432,18 +432,18 @@
             <objects>
                 <viewController storyboardIdentifier="gameOver" id="2h8-Xf-LVD" customClass="GameOverViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kJM-3t-4PW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXB-BW-pnu">
-                                <rect key="frame" x="122.5" y="245.5" width="75" height="77"/>
+                                <rect key="frame" x="169.5" y="409.5" width="75" height="77"/>
                                 <accessibility key="accessibilityConfiguration" label="Game Over 23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="64"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1L4-Qt-1Ne">
-                                <rect key="frame" x="72.5" y="354.5" width="175" height="51"/>
+                                <rect key="frame" x="119.5" y="518.5" width="175" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="PLAY AGAIN">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -453,7 +453,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME OVER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loc-S6-jDj">
-                                <rect key="frame" x="28" y="155.5" width="264" height="58"/>
+                                <rect key="frame" x="75" y="319.5" width="264" height="58"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -463,7 +463,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="okq-zb-xWl">
-                                <rect key="frame" x="114.5" y="410.5" width="91" height="51"/>
+                                <rect key="frame" x="161.5" y="574.5" width="91" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="MENU">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -500,23 +500,23 @@
             <objects>
                 <viewController storyboardIdentifier="visibilityPage" id="6oy-n2-lYF" customClass="VisibilityViewController" customModule="Audio_Rush" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2n5-f5-fTO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ion-eye-disabled" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pKs-Oh-ZfU">
-                                <rect key="frame" x="0.0" y="20" width="320" height="128"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="unr-eC-DrK"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Would you like to make obstacles invisible?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qgU-6b-2a4">
-                                <rect key="frame" x="16" y="156" width="288" height="129"/>
+                                <rect key="frame" x="16" y="200" width="382" height="86"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-IN-q4I">
-                                <rect key="frame" x="48" y="377" width="56" height="56"/>
+                                <rect key="frame" x="48" y="671" width="56" height="56"/>
                                 <accessibility key="accessibilityConfiguration" label="No"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="tpP-Sm-ZN2"/>
@@ -530,7 +530,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Izm-gv-ARG">
-                                <rect key="frame" x="216" y="377" width="56" height="56"/>
+                                <rect key="frame" x="310" y="671" width="56" height="56"/>
                                 <accessibility key="accessibilityConfiguration" label="Yes"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="56" id="1EP-xp-oQ7"/>
@@ -544,7 +544,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NRF-ny-Pi1">
-                                <rect key="frame" x="16" y="497" width="66" height="51"/>
+                                <rect key="frame" x="16" y="791" width="66" height="51"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <state key="normal" title="SKIP">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
