@@ -25,6 +25,8 @@ class FirstViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        UIAccessibility.post(notification: .screenChanged, argument: self.textView)
+
         if soundRate != nil {
             guard let url = Bundle.main.url(forResource: "loop", withExtension: "wav") else {
                 return
