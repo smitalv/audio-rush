@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var playerViewWidthContraint: NSLayoutConstraint!
     @IBOutlet weak var holeViewWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var tapToStartLabel: UILabel!
     
     var visibility = false
     var difficulty = "normal"
@@ -41,7 +42,7 @@ class GameViewController: UIViewController {
     var status = "ok"
     var originalDelay = 0.004
     var playerSize: CGFloat = 0
-    var initialFires = 0
+    var dead = false
     
     override var prefersStatusBarHidden: Bool {
         return true
@@ -71,10 +72,14 @@ class GameViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.initialFires = 0
-        self.timer = Timer.scheduledTimer(timeInterval: 0.0005, target: self, selector: #selector(initialFire), userInfo: nil, repeats: true)
-        self.playBeep(soundName: "loop")
-        self.setSound()
+        super.viewDidAppear(animated)
+
+        self.isAccessibilityElement = false
+        self.boardView.isUserInteractionEnabled = true
+        self.tapToStartLabel.alpha = 1
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { timer in
+            UIAccessibility.post(notification: .announcement, argument: "Tap to start")
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -85,7 +90,15 @@ class GameViewController: UIViewController {
         self.beepPlayer?.stop()
     }
 
+    @IBAction func tappedToStart(_ sender: UITapGestureRecognizer) {
+        self.tapToStartLabel.alpha = 0
+        self.playBeep(soundName: "loop")
+        self.setSound()
+        self.fire()
+    }
+    
     func start() {
+        self.scoreLabel.alpha = 0
         self.boardView.backgroundColor = UIColor(named: "GreenColour")
         self.holeOverlayView.backgroundColor = self.boardView.backgroundColor
         self.status = "ok"
@@ -104,65 +117,78 @@ class GameViewController: UIViewController {
         self.playerSize = 0.12 * self.screenWidth
         self.playerViewWidthContraint.constant = self.playerSize
         self.playerView.layer.cornerRadius = self.playerSize / 2
-    }
-
-    @objc func initialFire() {
-        self.initialFires += 1
-        self.setSound()
-        if (self.initialFires > 3000) {
-            self.timer?.invalidate()
-            self.timer = Timer.scheduledTimer(timeInterval: 0.0005, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
-        }
+        self.dead = false
     }
 
     @objc func fire() {
-        var interval = self.originalDelay - (Double(self.score) * 0.00005)
-        if (interval < 0.0005) {
-            interval = 0.0005
-        }
+        if !self.dead {
+            var interval = self.originalDelay - (Double(self.score) * 0.00005)
+            if (interval < 0.0005) {
+                interval = 0.0005
+            }
 
-        self.timer?.invalidate()
-        self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(fire), userInfo: nil, repeats: true)
 
-        self.setSound()
+            self.setSound()
 
-        if (self.playerView.frame.origin.y - 32 <= self.barrierView.frame.origin.y && self.playerView.frame.origin.y >= self.barrierView.frame.origin.y - CGFloat(self.playerSize)) {
-            if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2) || self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
-                self.playSound(soundName: "incorrect")
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "gameOver") as! GameOverViewController
-                vc.modalPresentationStyle = .fullScreen
-                vc.score = self.score
-                vc.leaderboard_id = self.leaderboard_id
-                self.present(vc, animated: false, completion: nil)
+            if (self.playerView.frame.origin.y - 32 <= self.barrierView.frame.origin.y && self.playerView.frame.origin.y >= self.barrierView.frame.origin.y - CGFloat(self.playerSize)) {
+                if (self.horizontalPosition - self.playerSize / 2 < self.holePosition - (self.holeWidth / 2) || self.horizontalPosition + self.playerSize / 2 > self.holePosition + (self.holeWidth / 2)) {
+                    self.status = "ko"
+                    self.dead = true
+                    self.playSound(soundName: "incorrect")
+                    if !UIAccessibility.isVoiceOverRunning {
+                        self.endGame()
+                    } else {
+                        UIAccessibility.post(notification: .announcement, argument: "Game Over " + String(self.score) + " points")
+                    }
+                }
+            }
+
+            if (self.playerView.frame.origin.y < self.barrierView.frame.origin.y - CGFloat(self.playerSize) && self.status == "ok") {
+                self.playSound(soundName: "correct")
+                self.score += 1
                 self.status = "ko"
             }
-        }
 
-        if (self.playerView.frame.origin.y < self.barrierView.frame.origin.y - CGFloat(self.playerSize) && self.status == "ok") {
-            self.playSound(soundName: "correct")
-            self.score += 1
-            self.scoreLabel.text = String(self.score)
-            self.status = "ko"
-        }
+            self.boardView.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
+            self.holeOverlayView.backgroundColor = self.boardView.backgroundColor
 
-        self.boardView.backgroundColor = UIColor(named: "GreenColour")?.withAlphaComponent(1 - 0.001 * CGFloat(self.steps))
-        self.holeOverlayView.backgroundColor = self.boardView.backgroundColor
-        
-        self.steps += 1
-        if(self.steps >= 1000) {
-            self.barrierViewTopConstraint.constant = 12
-            self.holePosition = CGFloat.random(in: 64 ... (self.screenWidth - 64))
-            self.holeViewLeftConstraint.constant = self.holePosition;
+            self.steps += 1
+            if (self.steps >= 1000) {
+                self.scoreLabel.text = String(self.score)
+                self.barrierViewTopConstraint.constant = 12
+                self.holePosition = CGFloat.random(in: 64...(self.screenWidth - 64))
+                self.holeViewLeftConstraint.constant = self.holePosition;
 
-            if(self.score > 20) {
-                self.holeWidth = (0.35 - 0.002 * CGFloat(self.score - 20)) * self.screenWidth
-                self.holeViewWidthConstraint.constant = self.holeWidth
+                if (self.score > 20) {
+                    self.holeWidth = (0.35 - 0.002 * CGFloat(self.score - 20)) * self.screenWidth
+                    self.holeViewWidthConstraint.constant = self.holeWidth
+                }
+                self.steps = 0
+                self.status = "ok"
             }
-            self.steps = 0
-            self.status = "ok"
+
+            if (self.visibility && self.barrierViewTopConstraint.constant < 270) {
+                self.scoreLabel.alpha = (1 - (270 - self.barrierViewTopConstraint.constant) * 0.01)
+            } else if (!self.visibility && self.steps < 150) {
+                self.scoreLabel.alpha = (1 - CGFloat(150 - self.steps) * 0.01)
+            } else if (self.steps > 800) {
+                self.scoreLabel.alpha = CGFloat(1000 - self.steps) * 0.0005
+            } else {
+                self.scoreLabel.alpha = 1
+            }
+
+            self.barrierViewTopConstraint.constant += step
         }
-        
-        self.barrierViewTopConstraint.constant += step
+    }
+
+    func endGame() {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "gameOver") as! GameOverViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.score = self.score
+        vc.leaderboard_id = self.leaderboard_id
+        self.present(vc, animated: false, completion: nil)
     }
 
     func setSound() {
@@ -256,18 +282,37 @@ class GameViewController: UIViewController {
         }
     }
 
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
+
+        if self.dead {
+            self.endGame()
+        }
+    }
+
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+
+        if self.dead {
+            self.endGame()
+        }
+    }
+
     @IBAction func tappedTwoFingers(_ sender: UITapGestureRecognizer) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "pause") as! PauseViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.score = self.score
-        self.present(vc, animated: false, completion: nil)
+        self.pause()
     }
     
     @IBAction func tappedPause(_ sender: UIButton) {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "pause") as! PauseViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.score = self.score
-        self.present(vc, animated: false, completion: nil)
+        self.pause()
+    }
+
+    func pause() {
+        if !self.dead {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "pause") as! PauseViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.score = self.score
+            self.present(vc, animated: false, completion: nil)
+        }
     }
     
 }

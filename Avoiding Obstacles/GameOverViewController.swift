@@ -20,6 +20,12 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         return true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -27,13 +33,15 @@ class GameOverViewController: UIViewController, GKGameCenterControllerDelegate {
         scoreLabel.text = String(self.score)
         scoreLabel.accessibilityLabel = "Game Over " + String(self.score) + " points"
 
-        let bestScoreInt = GKScore(leaderboardIdentifier: self.leaderboard_id)
-        bestScoreInt.value = Int64(self.score)
-        GKScore.report([bestScoreInt]) { (error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            } else {
-                print("Best Score submitted to your Leaderboard!")
+        if self.score > 0 {
+            let bestScoreInt = GKScore(leaderboardIdentifier: self.leaderboard_id)
+            bestScoreInt.value = Int64(self.score)
+            GKScore.report([bestScoreInt]) { (error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                } else {
+                    print("Best Score submitted to your Leaderboard!")
+                }
             }
         }
     }

@@ -29,7 +29,7 @@
 		B2345EAC23B00EA30087041C /* loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = loop.wav; path = "/Volumes/Václav - SSD/Projects/Avoiding Obstacles/loop.wav"; sourceTree = "<absolute>"; };
 		B2345EB023B01B690087041C /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		B245EF4F23B91DF60022B405 /* GetStartedPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedPageViewController.swift; sourceTree = "<group>"; };
-		B28B9EA22393BBB8006D156E /* Avoiding Obstacles.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Avoiding Obstacles.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B28B9EA22393BBB8006D156E /* Audio Rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Audio Rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B28B9EA52393BBB8006D156E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B28B9EA72393BBB8006D156E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B28B9EA92393BBB8006D156E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		B28B9EA32393BBB8006D156E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B28B9EA22393BBB8006D156E /* Avoiding Obstacles.app */,
+				B28B9EA22393BBB8006D156E /* Audio Rush.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B28B9EA12393BBB8006D156E /* Avoiding Obstacles */ = {
+		B28B9EA12393BBB8006D156E /* Audio Rush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Avoiding Obstacles" */;
+			buildConfigurationList = B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Audio Rush" */;
 			buildPhases = (
 				B28B9E9E2393BBB8006D156E /* Sources */,
 				B28B9E9F2393BBB8006D156E /* Frameworks */,
@@ -121,9 +121,9 @@
 			);
 			dependencies = (
 			);
-			name = "Avoiding Obstacles";
+			name = "Audio Rush";
 			productName = "Avoiding Obstacles";
-			productReference = B28B9EA22393BBB8006D156E /* Avoiding Obstacles.app */;
+			productReference = B28B9EA22393BBB8006D156E /* Audio Rush.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +141,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Avoiding Obstacles" */;
+			buildConfigurationList = B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Audio Rush" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,7 +154,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B28B9EA12393BBB8006D156E /* Avoiding Obstacles */,
+				B28B9EA12393BBB8006D156E /* Audio Rush */,
 			);
 		};
 /* End PBXProject section */
@@ -333,16 +333,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 3UAM9973N2;
 				INFOPLIST_FILE = "Avoiding Obstacles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "smit.al.Avoiding-Obstacles";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Audio Rush";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,16 +353,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = 3UAM9973N2;
 				INFOPLIST_FILE = "Avoiding Obstacles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.1;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "smit.al.Avoiding-Obstacles";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Audio Rush";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -371,7 +371,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Avoiding Obstacles" */ = {
+		B28B9E9D2393BBB8006D156E /* Build configuration list for PBXProject "Audio Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B28B9EB42393BBBA006D156E /* Debug */,
@@ -380,7 +380,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Avoiding Obstacles" */ = {
+		B28B9EB62393BBBA006D156E /* Build configuration list for PBXNativeTarget "Audio Rush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B28B9EB72393BBBA006D156E /* Debug */,

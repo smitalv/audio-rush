@@ -11,8 +11,16 @@ import UIKit
 class VisibilityViewController: UIViewController {
     var pageViewController: GetStartedPageViewController?
 
+    @IBOutlet weak var textView: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        UIAccessibility.post(notification: .screenChanged, argument: self.textView)
     }
 
     @IBAction func tapedYesButton(_ sender: UIButton) {

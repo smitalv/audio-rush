@@ -28,8 +28,6 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        authenticateLocalPlayer()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -59,6 +57,13 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
             self.difficultyButton.accessibilityLabel = "Normal difficulty. Tap to change."
         }
 
+        if (!defaults.bool(forKey: "initialized")) {
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "getStarted") as! GetStartedPageViewController
+            self.present(vc, animated: true, completion: nil)
+        } else {
+            authenticateLocalPlayer()
+        }
+
         self.updateLeaderboardId()
     }
 
@@ -76,6 +81,7 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
     }
     
     @IBAction func tappedLeaderboardButton(_ sender: UIButton) {
+        fullyAuthenticateLocalPlayer()
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = self
         gcVC.viewState = .leaderboards
@@ -135,24 +141,38 @@ class ViewController: UIViewController, GKGameCenterControllerDelegate {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.local
 
         localPlayer.authenticateHandler = {(ViewController, error) -> Void in
-            if((ViewController) != nil) {
-                // 1. Show login if player is not logged in
+            if(((ViewController) != nil) && (!self.defaults.bool(forKey: "initialized"))) {
                 self.present(ViewController!, animated: true, completion: nil)
             } else if (localPlayer.isAuthenticated) {
-                // 2. Player is already authenticated & logged in, load game center
                 self.gcEnabled = true
-
-                // Get the default leaderboard ID
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
-                    if error != nil { print(error)
+                    if error != nil { print(error as Any)
                     } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
                 })
-
             } else {
-                // 3. Game center is not enabled on the users device
                 self.gcEnabled = false
                 print("Local player could not be authenticated!")
-                print(error)
+                print(error as Any)
+            }
+        }
+    }
+
+    func fullyAuthenticateLocalPlayer() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.local
+
+        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+            if((ViewController) != nil) {
+                self.present(ViewController!, animated: true, completion: nil)
+            } else if (localPlayer.isAuthenticated) {
+                self.gcEnabled = true
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                    if error != nil { print(error as Any)
+                    } else { self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                })
+            } else {
+                self.gcEnabled = false
+                print("Local player could not be authenticated!")
+                print(error as Any)
             }
         }
     }
