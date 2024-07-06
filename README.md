@@ -20,3 +20,6 @@ Apple (as of November 2023) does not provide an easy way to install apps that ar
 - https://www.youtube.com/watch?v=kJa3wDJDQU0
 - https://www.youtube.com/watch?v=BFXkof7o4vw
 - https://www.youtube.com/watch?v=nEpRpR-L3lA
+
+## Usage
+<img width="1433" alt="Screenshot from App Store Connect showing 1.48K users" src="https://github.com/smitalv/audio-rush/assets/48749451/6036602f-3a93-435e-8914-3d08186ed7d5">
